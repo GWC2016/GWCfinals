@@ -12,7 +12,6 @@ image.onload = function() {
     }
 
 function move(n){
-    alert(n.keyCode);
     if(n.keyCode == 39){
         xPos += 10;
     }
