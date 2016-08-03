@@ -1,4 +1,4 @@
-<script>
+
             (function() {
         window.requestAnimationFrame = window.requestAnimationFrame
                 || window.webkitRequestAnimationFrame
@@ -12,7 +12,7 @@
 
         var img = new Image();
         img.onload = imageLoaded;
-        img.src = 'japan.copy.jpg';
+        img.src = 'japan.jpg';
 
         function imageLoaded() {
             draw(0);
@@ -62,4 +62,3 @@
             context.restore();
         }
     }());
-            </script>
