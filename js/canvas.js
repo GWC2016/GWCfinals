@@ -11,6 +11,7 @@ image.onload = function() {
         setInterval(loop, 1000 / 30);
     }
 
+
 function move(n){
     if(n.keyCode == 39){
         xPos += 10;
