@@ -27,7 +27,7 @@ var canvas = document.getElementById("canvas"),
     width = 700,
     height = 600,
     player = {
-      x : width/2,
+      x : width - 700,
       y : height - 5,
       width : 100,
       height : 100,
@@ -57,6 +57,7 @@ function update(){
         // right arrow
         if (player.velX < player.speed) {
             player.velX++;
+            u-=3
         }
     }
 //    if (keys[37]) {
@@ -90,7 +91,6 @@ function update(){
     ctx.drawImage(grass, u, canvas.height-40, canvas.width*3, 50);
     ctx.fillStyle = "#8B4513";
     ctx.fillRect(u,canvas.height-30,canvas.width*3,100);
-    u-=3;
     if (u <=-700){
         u=0;
     }
