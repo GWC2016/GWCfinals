@@ -27,11 +27,6 @@ grass.src = "grass.jpg";
 grass.onload = function() {
         setInterval(loop, 1000 / 30);
     }
-coin = new Image();
-coin.src = "coin.png";
-coin.onload = function() {
-    setInterval(loop, 1000 / 30);
-}
 
 
 info = new Image();
@@ -114,13 +109,9 @@ function update(){
     if (u <=-700){
         u=0;
     }
-<<<<<<< HEAD
-    ctx.drawImage(info, 200, 500, 30 ,30);
-    ctx.drawImage(coin, 0, 500, 100, 100);
-=======
+
     ctx.drawImage(info, height/4, width/2, 30 ,30);
 
->>>>>>> origin/master
 
   requestAnimationFrame(update);
 }
