@@ -98,6 +98,7 @@ function update(){
     }
 
   ctx.clearRect(0,0,width,height);
+  ctx.drawImage(japan, player.x+25, player.y-60, 100,100);
   ctx.drawImage(image, player.x, player.y - 30, player.width, player.height);
 //    ctx.drawImage(grass, u, height-40, width*2, 50);
     ctx.drawImage(grass, u, canvas.height-40, canvas.width*3, 50);
@@ -107,7 +108,7 @@ function update(){
         u=0;
     }
     ctx.drawImage(info, 200, 500, 30 ,30);
-    ctx.drawImage(japan, player.x+25, player.y-60, 100,100);
+
 
   requestAnimationFrame(update);
 }
