@@ -9,7 +9,19 @@ image.src = "js/girl.png";
 image.onload = function() {
         setInterval(loop, 1000 / 30);
     }
+run = new Image();
+run.src = "girl.running.png";
 
+run.onload = function() {
+        setInterval(loop, 1000 / 30);
+    }
+grass = new Image();
+grass.src = "grass.jpg";
+
+grass.onload = function() {
+        setInterval(loop, 1000 / 30);
+    }
+var u = 0;
 var canvas = document.getElementById("canvas"),
     ctx = canvas.getContext("2d"),
     width = 700,
@@ -30,6 +42,7 @@ var canvas = document.getElementById("canvas"),
 
 canvas.width = width;
 canvas.height = height;
+
 
 function update(){
   // check keys
@@ -72,7 +85,15 @@ function update(){
     }
 
   ctx.clearRect(0,0,width,height);
-  ctx.drawImage(image, player.x, player.y, player.width, player.height);
+  ctx.drawImage(image, player.x, player.y - 30, player.width, player.height);
+//    ctx.drawImage(grass, u, height-40, width*2, 50);
+    ctx.drawImage(grass, u, canvas.height-40, canvas.width*3, 50);
+    ctx.fillStyle = "#8B4513";
+    ctx.fillRect(u,canvas.height-30,canvas.width*3,100);
+    u-=5;
+    if (u <=-700){
+        u=0;
+    }
 
   requestAnimationFrame(update);
 }
