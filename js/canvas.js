@@ -13,6 +13,12 @@ image.src = "js/girl.png";
 image.onload = function() {
         setInterval(loop, 1000 / 30);
     }
+run = new Image();
+run.src = "girl.running.png";
+
+run.onload = function() {
+        setInterval(loop, 1000 / 30);
+    }
 grass = new Image();
 grass.src = "grass.jpg";
 
@@ -20,19 +26,22 @@ grass.onload = function() {
         setInterval(loop, 1000 / 30);
     }
 
+var gravity = 1.2;
+var isJumping = false;
+
 function move(n){
     if(n.keyCode == 39){
         xPos += 10;
     }
-    if(n.keyCode == 37){
-        xPos -= 10;
-    }
+//    if(n.keyCode == 37){
+//        xPos -= 10;
+//    }
     if(n.keyCode == 38){
         yPos -= 10;
     }
-
-var gravity = 1.2;
-var isJumping = false;
+    if (n.keyCode ==32){
+        isJumping = true;
+    }
 
 function jump() {
     if (isJumping == false) {
@@ -44,16 +53,19 @@ function jump() {
 function gameloop(){
  if (isJumping) {
      yPos += gravity;
-     character.y += yVel;
-         if (character.y > characterGround) {
-             character.y = characterGround;
-             yPos = 0;
+     character.y += yPos;
+         if (character.y > yPos) {
+             character.y = yPos;
+             yPos = height-130;
              isJumping = false;
             }
      }
 }
     canvas.width = canvas.width;
     context.drawImage(image, xPos, yPos,100,100);
+    if (xPos >= width){
+        xPos=0;
+    }
     context.drawImage(grass, u, height-40, width*2, 50);
     context.fillStyle = "#8B4513";
     context.fillRect(u,height-30,width*2,100);
@@ -64,4 +76,3 @@ function gameloop(){
     context.stroke();
 }
 document.onkeydown = move;
-
