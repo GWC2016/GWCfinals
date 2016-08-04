@@ -37,7 +37,7 @@ var u = 0;
 var canvas = document.getElementById("canvas"),
     ctx = canvas.getContext("2d"),
     width = 700,
-    height = 600,
+    height = 450,
     player = {
       x : width - 700,
       y : height - 5,
@@ -107,7 +107,7 @@ function update(){
     if (u <=-700){
         u=0;
     }
-    ctx.drawImage(info, 200, 500, 30 ,30);
+    ctx.drawImage(info, height/4, width/2, 30 ,30);
 
 
   requestAnimationFrame(update);
