@@ -9,6 +9,12 @@ image.src = "js/girl.png";
 image.onload = function() {
         setInterval(loop, 1000 / 30);
     }
+japan = new Image();
+japan.src = "flags/japan.png";
+
+japan.onload = function() {
+        setInterval(loop, 1000 / 30);
+    }
 run = new Image();
 run.src = "girl.running.png";
 
@@ -38,7 +44,7 @@ var u = 0;
 var canvas = document.getElementById("canvas"),
     ctx = canvas.getContext("2d"),
     width = 700,
-    height = 600,
+    height = 450,
     player = {
       x : width - 700,
       y : height - 5,
@@ -99,6 +105,7 @@ function update(){
     }
 
   ctx.clearRect(0,0,width,height);
+  ctx.drawImage(japan, player.x+25, player.y-60, 100,100);
   ctx.drawImage(image, player.x, player.y - 30, player.width, player.height);
 //    ctx.drawImage(grass, u, height-40, width*2, 50);
     ctx.drawImage(grass, u, canvas.height-40, canvas.width*3, 50);
@@ -107,8 +114,13 @@ function update(){
     if (u <=-700){
         u=0;
     }
+<<<<<<< HEAD
     ctx.drawImage(info, 200, 500, 30 ,30);
     ctx.drawImage(coin, 0, 500, 100, 100);
+=======
+    ctx.drawImage(info, height/4, width/2, 30 ,30);
+
+>>>>>>> origin/master
 
   requestAnimationFrame(update);
 }
