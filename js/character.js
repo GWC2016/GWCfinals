@@ -9,6 +9,12 @@ image.src = "js/girl.png";
 image.onload = function() {
         setInterval(loop, 1000 / 30);
     }
+japan = new Image();
+japan.src = "flags/japan.png";
+
+japan.onload = function() {
+        setInterval(loop, 1000 / 30);
+    }
 run = new Image();
 run.src = "girl.running.png";
 
@@ -101,6 +107,7 @@ function update(){
         u=0;
     }
     ctx.drawImage(info, 200, 500, 30 ,30);
+    ctx.drawImage(japan, player.x+25, player.y-60, 100,100);
 
   requestAnimationFrame(update);
 }
