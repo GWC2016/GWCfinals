@@ -3,15 +3,22 @@
     window.requestAnimationFrame = requestAnimationFrame;
 })();
 
+image = new Image();
+image.src = "js/girl.png";
+
+image.onload = function() {
+        setInterval(loop, 1000 / 30);
+    }
+
 var canvas = document.getElementById("canvas"),
     ctx = canvas.getContext("2d"),
-    width = 500,
-    height = 200,
+    width = 700,
+    height = 600,
     player = {
       x : width/2,
       y : height - 5,
-      width : 5,
-      height : 5,
+      width : 100,
+      height : 100,
       speed: 3,
       velX: 0,
       velY: 0,
@@ -65,8 +72,7 @@ function update(){
     }
 
   ctx.clearRect(0,0,width,height);
-  ctx.fillStyle = "red";
-  ctx.fillRect(player.x, player.y, player.width, player.height);
+  ctx.drawImage(image, player.x, player.y, player.width, player.height);
 
   requestAnimationFrame(update);
 }
