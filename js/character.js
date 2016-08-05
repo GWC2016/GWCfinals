@@ -36,6 +36,13 @@ info.src = "info.png";
 info.onload = function() {
         setInterval(loop, 1000 / 30);
     }
+var background = new Image();
+background.src = "japan.jpg";
+
+// Make sure the image is loaded first otherwise nothing will draw.
+background.onload = function(){
+    setInterval(loop,1000/30);
+}
 var u = 0;
 var canvas = document.getElementById("canvas"),
     ctx = canvas.getContext("2d"),
@@ -101,8 +108,10 @@ function update(){
     }
 
   ctx.clearRect(0,0,width,height);
+  ctx.drawImage(background, 0, 0, 700,450);
   ctx.drawImage(japan, player.x+25, player.y-60, 100,100);
   ctx.drawImage(image, player.x, player.y - 30, player.width, player.height);
+
 
 
 //    ctx.drawImage(grass, u, height-40, width*2, 50);
