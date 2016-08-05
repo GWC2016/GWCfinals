@@ -60,6 +60,7 @@ var canvas = document.getElementById("canvas"),
     keys = [],
     friction = 0.8,
     gravity = 0.3;
+var collide = false;
 var xbox = width/2;
 var ybox = 350;
 var boxes = [];
@@ -115,6 +116,7 @@ function update(){
         } else if (dir === "b") {
             player.grounded = true;
             player.jumping = false;
+            collide = true;
         } else if (dir === "t") {
             player.velY *= -1;
         }
@@ -150,6 +152,12 @@ function update(){
     ctx.drawImage(grass, u, canvas.height-40, canvas.width, 50);
     ctx.fillStyle = "#8B4513";
     ctx.fillRect(u,canvas.height-30,canvas.width*3,100);
+    if(collide){
+        ctx.fillStyle = "#8B4513";
+        ctx.fillRect(0,0,200,200);
+        ctx.fill();
+    }
+
 
 
     ctx.fill();
