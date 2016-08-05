@@ -2,7 +2,13 @@
     var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
     window.requestAnimationFrame = requestAnimationFrame;
 })();
+var background = new Image();
+background.src = "japan.jpg";
 
+// Make sure the image is loaded first otherwise nothing will draw.
+background.onload = function(){
+    setInterval(loop,1000/30);
+}
 image = new Image();
 image.src = "js/girl.png";
 
@@ -134,6 +140,7 @@ function update(){
     }
 
     ctx.clearRect(0, 0, width, height);
+    ctx.drawImage(background, 0, 0, width,height);
     ctx.fillStyle = "black";
     ctx.beginPath();
 
