@@ -63,12 +63,8 @@ var canvas = document.getElementById("canvas"),
 var collide = false;
 var xbox = width/2;
 var ybox = 350;
-<<<<<<< Updated upstream
 var xtext = 90;
 var ytext = 100;
-=======
-//var delay = window.setInterval(textup, 1000);
->>>>>>> Stashed changes
 var boxes = [];
 
 // dimensions
@@ -125,8 +121,6 @@ function update(){
             collide = true;
         } else if (dir === "t") {
             player.velY *= -1;
-        } else {
-            collide = false;
         }
 
     }
@@ -160,22 +154,15 @@ function update(){
     ctx.drawImage(grass, u, canvas.height-40, canvas.width, 50);
     ctx.fillStyle = "#8B4513";
     ctx.fillRect(u,canvas.height-30,canvas.width*3,100);
-
     if(collide){
-//        function textup{
         ctx.fillStyle = "white";
         ctx.fillRect(xtext,ytext,200,200);
         ctx.fill();
         ctx.stroke();
-<<<<<<< Updated upstream
 
         ctx.strokeText("JAPAN",xtext + 15,ytext + 10);
         ctx.strokeText("IS THE BOMB", xtext + 15, ytext + 20);
         ctx.strokeText("DOT COM", xtext + 15, ytext + 30);
-=======
-        ctx.strokeText("Hello World",10,50);
-        collide=false;
->>>>>>> Stashed changes
     }
 
 
