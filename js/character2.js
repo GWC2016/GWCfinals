@@ -8,6 +8,7 @@ image.src = "pixel sprite.png";
 
 image.onload = function(){
     setInterval(loop,1000/30);
+
 }
 
 var canvas = document.getElementById("canvas"),
@@ -81,6 +82,7 @@ function update() {
         // right arrow
         if (player.velX < player.speed) {
             player.velX++;
+            ctx.drawImage(image,player.x, player.y, player.width, player.height);
         }
     }
     if (keys[37]) {
@@ -131,11 +133,11 @@ function update() {
 
 function colCheck(shapeA, shapeB) {
     // get the vectors to check against
-    var vX = (shapeA.x + (shapeA.width / 2)) - (shapeB.x + (shapeB.width / 2)),
-        vY = (shapeA.y + (shapeA.height / 2)) - (shapeB.y + (shapeB.height / 2)),
+    var vX = (shapeA.x + (shapeA.width / 5)) - (shapeB.x + (shapeB.width / 5)),
+        vY = (shapeA.y + (shapeA.height / 5)) - (shapeB.y + (shapeB.height / 5)),
         // add the half widths and half heights of the objects
-        hWidths = (shapeA.width / 2) + (shapeB.width / 2),
-        hHeights = (shapeA.height / 2) + (shapeB.height / 2),
+        hWidths = (shapeA.width / 5) + (shapeB.width / 2),
+        hHeights = (shapeA.height / 2.5) + (shapeB.height / 2),
         colDir = null;
 
     // if the x and y vector are less than the half width or half height, they we must be inside the object, causing a collision
