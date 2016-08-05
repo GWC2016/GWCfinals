@@ -42,7 +42,7 @@ var canvas = document.getElementById("canvas"),
     height = 450,
     player = {
       x : 0,
-      y : height - 15,
+      y : height,
       width : 100,
       height : 100,
       speed: 3,
@@ -138,8 +138,8 @@ function update(){
     ctx.beginPath();
 
     ctx.drawImage(info, xbox, ybox, 60 ,60);
-      ctx.drawImage(japan, player.x+25, player.y-60, 100,100);
-      ctx.drawImage(image, player.x, player.y - 30, player.width, player.height);
+    ctx.drawImage(japan, player.x+25, player.y-60, 100,100);
+    ctx.drawImage(image, player.x, player.y -25, player.width, player.height);
     ctx.drawImage(grass, u, canvas.height-40, canvas.width, 50);
     ctx.fillStyle = "#8B4513";
     ctx.fillRect(u,canvas.height-30,canvas.width*3,100);
