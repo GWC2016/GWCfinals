@@ -3,6 +3,7 @@
     window.requestAnimationFrame = requestAnimationFrame;
 })();
 
+var girl = document.getElementById("girl").getAttribute("girl.png");
 image = new Image();
 image.src = "js/girl.png";
 
@@ -102,6 +103,8 @@ function update(){
   ctx.clearRect(0,0,width,height);
   ctx.drawImage(japan, player.x+25, player.y-60, 100,100);
   ctx.drawImage(image, player.x, player.y - 30, player.width, player.height);
+
+
 //    ctx.drawImage(grass, u, height-40, width*2, 50);
     ctx.drawImage(grass, u, canvas.height-40, canvas.width*3, 50);
     ctx.fillStyle = "#8B4513";
@@ -114,6 +117,14 @@ function update(){
 
 
   requestAnimationFrame(update);
+}
+
+function collides(a, b)
+{
+    if (a.x < b.x + b.width &&
+        a.x + a.width > b.x &&
+        a.y < b.y + b.height &&
+        a.y + a.height > b.y) return true;
 }
 
 document.body.addEventListener("keydown", function(e) {
