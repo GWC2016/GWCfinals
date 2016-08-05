@@ -153,8 +153,9 @@ function update(){
     ctx.fillStyle = "#8B4513";
     ctx.fillRect(u,canvas.height-30,canvas.width*3,100);
     if(collide){
-        ctx.fillStyle = "#8B4513";
+        ctx.fillStyle = "white";
         ctx.fillRect(0,0,200,200);
+        ctx.fillText("Hello World",10,50);
         ctx.fill();
     }
 
