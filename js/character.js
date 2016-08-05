@@ -63,6 +63,8 @@ var canvas = document.getElementById("canvas"),
 var collide = false;
 var xbox = width/2;
 var ybox = 350;
+var xtext = 90;
+var ytext = 100;
 var boxes = [];
 
 // dimensions
@@ -154,11 +156,13 @@ function update(){
     ctx.fillRect(u,canvas.height-30,canvas.width*3,100);
     if(collide){
         ctx.fillStyle = "white";
-        ctx.fillRect(0,0,200,200);
+        ctx.fillRect(xtext,ytext,200,200);
         ctx.fill();
         ctx.stroke();
 
-        ctx.strokeText("Hello World",10,50);
+        ctx.strokeText("JAPAN",xtext + 15,ytext + 10);
+        ctx.strokeText("IS THE BOMB", xtext + 15, ytext + 20);
+        ctx.strokeText("DOT COM", xtext + 15, ytext + 30);
     }
 
 
