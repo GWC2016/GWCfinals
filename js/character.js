@@ -33,7 +33,12 @@ grass.src = "grass.jpg";
 grass.onload = function() {
         setInterval(loop, 1000 / 30);
     }
+block = new Image();
+block.src = "block.png";
 
+block.onload = function() {
+        setInterval(loop, 1000 / 30);
+    }
 
 info = new Image();
 info.src = "info.png";
@@ -70,9 +75,15 @@ var boxes = [];
 // dimensions
 boxes.push({
     x: xbox,
-    y: ybox,
+    y: ybox-30,
     width: 60,
     height: 60
+});
+boxes.push({
+    x: xbox-60,
+    y: ybox,
+    width: 50,
+    height: 50
 });
 
 canvas.width = width;
@@ -148,7 +159,8 @@ function update(){
     ctx.fillStyle = "black";
     ctx.beginPath();
 
-    ctx.drawImage(info, xbox, ybox, 60 ,60);
+    ctx.drawImage(info, xbox, ybox-30, 60 ,60);
+    ctx.drawImage(block, xbox-60, ybox, 50 ,50);
     ctx.drawImage(japan, player.x+25, player.y-60, 100,100);
     ctx.drawImage(image, player.x, player.y -25, player.width, player.height);
     ctx.drawImage(grass, u, canvas.height-40, canvas.width, 50);
