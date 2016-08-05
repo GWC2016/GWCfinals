@@ -3,6 +3,7 @@
     window.requestAnimationFrame = requestAnimationFrame;
 })();
 
+var girl = document.getElementById("girl").getAttribute("girl.png");
 image = new Image();
 image.src = "js/girl.png";
 
@@ -139,6 +140,12 @@ function update(){
   ctx.drawImage(info, 350, height - 90, 50 ,50);
   ctx.drawImage(japan, player.x+25, player.y-60, 100,100);
   ctx.drawImage(image, player.x, player.y - 30, player.width, player.height);
+<<<<<<< HEAD
+=======
+
+
+//    ctx.drawImage(grass, u, height-40, width*2, 50);
+>>>>>>> origin/master
     ctx.drawImage(grass, u, canvas.height-40, canvas.width*3, 50);
     ctx.fillStyle = "#8B4513";
     ctx.fillRect(u,canvas.height-30,canvas.width*3,100);
@@ -152,6 +159,7 @@ function update(){
   requestAnimationFrame(update);
 }
 
+<<<<<<< HEAD
 function colCheck(shapeA, shapeB) {
     // get the vectors to check against
     var vX = (shapeA.x + (shapeA.width / 5)) - (shapeB.x + (shapeB.width / 5)),
@@ -185,6 +193,14 @@ function colCheck(shapeA, shapeB) {
         }
     }
     return colDir;
+=======
+function collides(a, b)
+{
+    if (a.x < b.x + b.width &&
+        a.x + a.width > b.x &&
+        a.y < b.y + b.height &&
+        a.y + a.height > b.y) return true;
+>>>>>>> origin/master
 }
 
 document.body.addEventListener("keydown", function(e) {
