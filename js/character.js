@@ -155,13 +155,15 @@ function update(){
     if(collide){
         ctx.fillStyle = "white";
         ctx.fillRect(0,0,200,200);
-        ctx.fillText("Hello World",10,50);
         ctx.fill();
+        ctx.stroke();
+
+        ctx.strokeText("Hello World",10,50);
     }
 
 
 
-    ctx.fill();
+
   requestAnimationFrame(update);
 }
 
