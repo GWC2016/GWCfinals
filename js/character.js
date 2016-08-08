@@ -65,15 +65,22 @@ var canvas = document.getElementById("canvas"),
     keys = [],
     friction = 0.8,
     gravity = 0.3;
-var collide = false;
 var xbox = 800;
 var ybox = height-90;
 var xtext = 90;
 var ytext = 100;
 var boxes = [];
 var blocks= [];
-
+var fact1 = false;
+var fact2 = false;
+var fact3 = false;
 // dimensions
+boxes.push({
+    x: xbox-500,
+    y: ybox,
+    width: 50,
+    height: 50
+});
 boxes.push({
     x: xbox,
     y: ybox-130,
@@ -83,12 +90,6 @@ boxes.push({
 boxes.push({
     x: xbox+200,
     y: ybox-130,
-    width: 50,
-    height: 50
-});
-boxes.push({
-    x: xbox-500,
-    y: ybox,
     width: 50,
     height: 50
 });
@@ -146,7 +147,7 @@ function update(){
     for (var i = 0; i < boxes.length; i++) {
         ctx.rect(boxes[i].x, boxes[i].y, boxes[i].width, boxes[i].height);
 
-        var dir = colCheck(player, boxes[i]);
+        var dir = colCheck(player, boxes[0]);
 
         if (dir === "l" || dir === "r") {
             player.velX = 0;
@@ -154,7 +155,41 @@ function update(){
         } else if (dir === "b") {
             player.grounded = true;
             player.jumping = false;
-            collide = true;
+            fact1 = true;
+        } else if (dir === "t") {
+            player.velY *= -1;
+        }
+
+    }
+    for (var i = 0; i < boxes.length; i++) {
+        ctx.rect(boxes[i].x, boxes[i].y, boxes[i].width, boxes[i].height);
+
+        var dir = colCheck(player, boxes[1]);
+
+        if (dir === "l" || dir === "r") {
+            player.velX = 0;
+            player.jumping = false;
+        } else if (dir === "b") {
+            player.grounded = true;
+            player.jumping = false;
+            fact2 = true;
+        } else if (dir === "t") {
+            player.velY *= -1;
+        }
+
+    }
+       for (var i = 0; i < boxes.length; i++) {
+        ctx.rect(boxes[i].x, boxes[i].y, boxes[i].width, boxes[i].height);
+
+        var dir = colCheck(player, boxes[2]);
+
+        if (dir === "l" || dir === "r") {
+            player.velX = 0;
+            player.jumping = false;
+        } else if (dir === "b") {
+            player.grounded = true;
+            player.jumping = false;
+            fact3 = true;
         } else if (dir === "t") {
             player.velY *= -1;
         }
@@ -214,7 +249,7 @@ function update(){
     ctx.drawImage(grass, u, canvas.height-40, canvas.width, 50);
     ctx.fillStyle = "#8B4513";
     ctx.fillRect(u,canvas.height-30,canvas.width*3,100);
-    if(collide){
+    if(fact1){
         ctx.fillStyle = "white";
         ctx.fillRect(xtext,ytext,200,200);
         ctx.fill();
@@ -224,6 +259,27 @@ function update(){
         ctx.strokeText("IS THE BOMB", xtext + 15, ytext + 20);
         ctx.strokeText("DOT COM", xtext + 15, ytext + 30);
     }
+    if(fact2){
+        ctx.fillStyle = "white";
+        ctx.fillRect(xtext,ytext,200,200);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.strokeText("YOOO",xtext + 15,ytext + 10);
+        ctx.strokeText("IS THE BOMB", xtext + 15, ytext + 20);
+        ctx.strokeText("DOT COM", xtext + 15, ytext + 30);
+    }
+      if(fact3){
+        ctx.fillStyle = "white";
+        ctx.fillRect(xtext,ytext,200,200);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.strokeText("YOOO",xtext + 15,ytext + 10);
+        ctx.strokeText("IS THE BOMB", xtext + 15, ytext + 20);
+        ctx.strokeText("DOT COM", xtext + 15, ytext + 30);
+    }
+
 
 
 
