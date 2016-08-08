@@ -80,6 +80,8 @@ var blocks= [];
 var fact1 = false;
 var fact2 = false;
 var fact3 = false;
+var hitFlag = false;
+var flags = [];
 // dimensions
 boxes.push({
     x: xbox-500,
@@ -117,6 +119,13 @@ blocks.push({
     width: 50,
     height: 50
 });
+flags.push({
+    x: 1200,
+    y: ybox,
+    width: 50,
+    height: 50
+});
+
 
 canvas.width = width;
 canvas.height = height;
@@ -217,6 +226,22 @@ function update(){
         }
 
     }
+    for (var i = 0; i < flags.length; i++) {
+        ctx.rect(flags[i].x, flags[i].y, flags[i].width, flags[i].height);
+
+        var dir = colCheck(player, flags[i]);
+
+        if (dir === "l" || dir === "r") {
+            player.velX = 0;
+            player.jumping = false;
+            hitFlag = true;
+        } else if (dir === "b") {
+            player.grounded = true;
+            player.jumping = false;
+        } else if (dir === "t") {
+            player.velY *= -1;
+        }
+    }
 
     if(player.grounded){
          player.velY = 0;
@@ -225,7 +250,7 @@ function update(){
     player.x += player.velX;
     player.y += player.velY;
 
-    if (player.x >= width-player.width) {
+    if (player.x >= width) {
         player.x = width-player.width;
     } else if (player.x <= 0) {
         player.x = 0;
@@ -248,9 +273,10 @@ function update(){
     ctx.drawImage(block, xbox-100, ybox, 50 ,50);
     ctx.drawImage(block, xbox-60, ybox-50, 50 ,50);
     ctx.drawImage(block, xbox-80, ybox, 50 ,50);
+    ctx.drawImage(japan, 1200, ybox, 50 ,50);
 
 
-    ctx.drawImage(japan, player.x+25, player.y-60, 100,100);
+    //ctx.drawImage(japan, player.x+25, player.y-60, 100,100);
     ctx.drawImage(image, player.x, player.y -25, player.width, player.height);
     ctx.drawImage(grass, u, canvas.height-40, canvas.width, 50);
     ctx.fillStyle = "#8B4513";
@@ -288,18 +314,9 @@ function update(){
 
 
 
-    if (player.x >= 1000){
-        player = {
-      x : 0,
-      y : height,
-      width : 100,
-      height : 100,
-      speed: 3,
-      velX: 0,
-      velY: 0,
-      jumping: false,
-      grounded: false
-    },
+
+    if (hitFlag){
+
         ctx.clearRect(0,0,width,height);
          ctx.drawImage(miami, 0, 0, width,height);
     ctx.fillStyle = "black";
@@ -316,11 +333,11 @@ function update(){
     ctx.drawImage(block, xbox-80, ybox, 50 ,50);
 
 
-    ctx.drawImage(japan, player.x+25, player.y-60, 100,100);
-    ctx.drawImage(image, player.x, player.y -25, player.width, player.height);
+    //ctx.drawImage(japan, player.x+25, player.y-60, 100,100);
     ctx.drawImage(grass, u, canvas.height-40, canvas.width, 50);
     ctx.fillStyle = "#8B4513";
     ctx.fillRect(u,canvas.height-30,canvas.width*3,100);
+    ctx.drawImage(image, player.x-1100,player.y-25, player.width, player.height);
 
 
     }
