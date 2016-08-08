@@ -206,8 +206,6 @@ function update(){
     ctx.drawImage(block, xbox-60, ybox, 50 ,50);
     ctx.drawImage(block, xbox-100, ybox, 50 ,50);
     ctx.drawImage(block, xbox-60, ybox-50, 50 ,50);
-
-    ctx.drawImage(info, xbox, ybox-30, 60 ,60);
     ctx.drawImage(block, xbox-80, ybox, 50 ,50);
 
 
