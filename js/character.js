@@ -218,7 +218,7 @@ function update(){
         ctx.fillRect(xtext,ytext,200,200);
         ctx.fill();
         ctx.stroke();
-        ctx.font = "15px"
+        ctx.font = "10px"
 
         ctx.strokeText("Japan's national sprot is sumo",xtext + 10,ytext + 30);
 
