@@ -67,8 +67,8 @@ var canvas = document.getElementById("canvas"),
     gravity = 0.3;
 var xbox = 800;
 var ybox = height-90;
-var xtext = 90;
-var ytext = 100;
+var xtext = 0;
+var ytext = 0;
 var boxes = [];
 var blocks= [];
 var fact1 = false;
@@ -132,12 +132,12 @@ function update(){
             player.velX++;
             }
         }
-    if (keys[37]) {
-            // left arrow
-        if (player.velX > -player.speed) {
-            player.velX--;
-            }
-        }
+//    if (keys[37]) {
+//            // left arrow
+//        if (player.velX > -player.speed) {
+//            player.velX--;
+//            }
+//        }
 
     player.velX *= friction;
     player.velY += gravity;
@@ -279,6 +279,7 @@ function update(){
         ctx.strokeText("IS THE BOMB", xtext + 15, ytext + 20);
         ctx.strokeText("DOT COM", xtext + 15, ytext + 30);
     }
+
 
 
 
