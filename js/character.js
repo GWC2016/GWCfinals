@@ -67,7 +67,7 @@ var canvas = document.getElementById("canvas"),
     gravity = 0.3;
 var collide = false;
 var xbox = width/2;
-var ybox = 350;
+var ybox = height-90;
 var xtext = 90;
 var ytext = 100;
 var boxes = [];
@@ -79,7 +79,8 @@ boxes.push({
     width: 60,
     height: 60
 });
-boxes.push({
+var blocks= [];
+blocks.push({
     x: xbox-60,
     y: ybox,
     width: 50,
@@ -130,6 +131,22 @@ function update(){
             player.grounded = true;
             player.jumping = false;
             collide = true;
+        } else if (dir === "t") {
+            player.velY *= -1;
+        }
+
+    }
+    for (var i = 0; i < blocks.length; i++) {
+        ctx.rect(blocks[i].x, blocks[i].y, blocks[i].width, blocks[i].height);
+
+        var dir = colCheck(player, blocks[i]);
+
+        if (dir === "l" || dir === "r") {
+            player.velX = 0;
+            player.jumping = false;
+        } else if (dir === "b") {
+            player.grounded = true;
+            player.jumping = false;
         } else if (dir === "t") {
             player.velY *= -1;
         }
