@@ -66,7 +66,7 @@ var canvas = document.getElementById("canvas"),
     friction = 0.8,
     gravity = 0.3;
 var collide = false;
-var xbox = width/2;
+var xbox = 800;
 var ybox = height-90;
 var xtext = 90;
 var ytext = 100;
@@ -81,8 +81,14 @@ boxes.push({
     height: 50
 });
 boxes.push({
-    x: xbox+150,
+    x: xbox+160,
     y: ybox-130,
+    width: 50,
+    height: 50
+});
+boxes.push({
+    x: xbox-500,
+    y: ybox,
     width: 50,
     height: 50
 });
@@ -195,7 +201,8 @@ function update(){
     ctx.beginPath();
 
     ctx.drawImage(info, xbox, ybox-130, 50 ,50);
-    ctx.drawImage(info, xbox+150, ybox-130, 50 ,50);
+    ctx.drawImage(info, xbox+160, ybox-130, 50 ,50);
+    ctx.drawImage(info, xbox-500, ybox, 50 ,50);
     ctx.drawImage(block, xbox-60, ybox, 50 ,50);
     ctx.drawImage(block, xbox-100, ybox, 50 ,50);
     ctx.drawImage(block, xbox-60, ybox-50, 50 ,50);
