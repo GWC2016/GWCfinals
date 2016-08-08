@@ -21,6 +21,12 @@ japan.src = "flags/japan.png";
 japan.onload = function() {
         setInterval(loop, 1000 / 30);
     }
+miami = new Image();
+miami.src = "miamiNice.jpg";
+
+miami.onload = function() {
+        setInterval(loop, 1000 / 30);
+    }
 run = new Image();
 run.src = "girl.running.png";
 
@@ -281,6 +287,43 @@ function update(){
     }
 
 
+
+    if (player.x >= 1000){
+        player = {
+      x : 0,
+      y : height,
+      width : 100,
+      height : 100,
+      speed: 3,
+      velX: 0,
+      velY: 0,
+      jumping: false,
+      grounded: false
+    },
+        ctx.clearRect(0,0,width,height);
+         ctx.drawImage(miami, 0, 0, width,height);
+    ctx.fillStyle = "black";
+    ctx.beginPath();
+
+    ctx.drawImage(info, xbox, ybox-130, 50 ,50);
+    ctx.drawImage(info, xbox+200, ybox-130, 50 ,50);
+    ctx.drawImage(info, xbox-500, ybox, 50 ,50);
+    ctx.drawImage(block, xbox-60, ybox, 50 ,50);
+    ctx.drawImage(block, xbox-100, ybox, 50 ,50);
+    ctx.drawImage(block, xbox-60, ybox-50, 50 ,50);
+
+
+    ctx.drawImage(block, xbox-80, ybox, 50 ,50);
+
+
+    ctx.drawImage(japan, player.x+25, player.y-60, 100,100);
+    ctx.drawImage(image, player.x, player.y -25, player.width, player.height);
+    ctx.drawImage(grass, u, canvas.height-40, canvas.width, 50);
+    ctx.fillStyle = "#8B4513";
+    ctx.fillRect(u,canvas.height-30,canvas.width*3,100);
+
+
+    }
 
 
 
