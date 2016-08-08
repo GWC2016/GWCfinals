@@ -197,17 +197,16 @@ function update(){
     ctx.fillStyle = "black";
     ctx.beginPath();
 
-<<<<<<< HEAD
     ctx.drawImage(info, xbox, ybox-130, 50 ,50);
     ctx.drawImage(info, xbox+200, ybox-130, 50 ,50);
     ctx.drawImage(info, xbox-500, ybox, 50 ,50);
     ctx.drawImage(block, xbox-60, ybox, 50 ,50);
     ctx.drawImage(block, xbox-100, ybox, 50 ,50);
     ctx.drawImage(block, xbox-60, ybox-50, 50 ,50);
-=======
+
     ctx.drawImage(info, xbox, ybox-30, 60 ,60);
     ctx.drawImage(block, xbox-80, ybox, 50 ,50);
->>>>>>> origin/master
+
     ctx.drawImage(japan, player.x+25, player.y-60, 100,100);
     ctx.drawImage(image, player.x, player.y -25, player.width, player.height);
     ctx.drawImage(grass, u, canvas.height-40, canvas.width, 50);
