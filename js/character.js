@@ -11,19 +11,16 @@ background.onload = function(){
 }
 image = new Image();
 image.src = "js/girl.png";
-
 image.onload = function() {
         setInterval(loop, 1000 / 30);
     }
 japan = new Image();
 japan.src = "flags/japan.png";
-
 japan.onload = function() {
         setInterval(loop, 1000 / 30);
     }
 run = new Image();
 run.src = "girl.running.png";
-
 run.onload = function() {
         setInterval(loop, 1000 / 30);
     }
@@ -177,7 +174,7 @@ function update(){
     ctx.beginPath();
 
     ctx.drawImage(info, xbox, ybox-30, 60 ,60);
-    ctx.drawImage(block, xbox-60, ybox, 50 ,50);
+    ctx.drawImage(block, xbox-80, ybox, 50 ,50);
     ctx.drawImage(japan, player.x+25, player.y-60, 100,100);
     ctx.drawImage(image, player.x, player.y -25, player.width, player.height);
     ctx.drawImage(grass, u, canvas.height-40, canvas.width, 50);
@@ -188,10 +185,22 @@ function update(){
         ctx.fillRect(xtext,ytext,200,200);
         ctx.fill();
         ctx.stroke();
+        ctx.font = "15px"
 
-        ctx.strokeText("JAPAN",xtext + 15,ytext + 10);
-        ctx.strokeText("IS THE BOMB", xtext + 15, ytext + 20);
-        ctx.strokeText("DOT COM", xtext + 15, ytext + 30);
+        ctx.strokeText("Japan's national sprot is sumo",xtext + 10,ytext + 30);
+
+        ctx.strokeText("Going back to the 8th century,", xtext + 10, ytext + 40);
+        ctx.strokeText("sumo started as a prayer to have a ", xtext + 10, ytext + 50);
+        ctx.strokeText("good rice harvest, but then turned", xtext + 10, ytext + 60);
+        ctx.strokeText("into a public sport, where two men", xtext + 10, ytext + 70);
+        ctx.strokeText("fight in a ring. The only way to", xtext + 10, ytext + 80);
+        ctx.strokeText("win is when one player knocked the", xtext + 10, ytext + 90);
+        ctx.strokeText("other player out of the ring or if any", xtext + 10, ytext + 100);
+        ctx.strokeText("of his body part except his feet touched", xtext + 10, ytext + 110);
+        ctx.strokeText("the ground. Sumo is still a large", xtext + 10, ytext + 120);
+        ctx.strokeText("Japanese tradition which still has", xtext + 10, ytext + 130);
+        ctx.strokeText("ancient customs and dress.", xtext + 10, ytext + 140);
+
     }
 
 
