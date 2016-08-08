@@ -81,7 +81,7 @@ boxes.push({
     height: 50
 });
 boxes.push({
-    x: xbox+160,
+    x: xbox+200,
     y: ybox-130,
     width: 50,
     height: 50
@@ -201,7 +201,7 @@ function update(){
     ctx.beginPath();
 
     ctx.drawImage(info, xbox, ybox-130, 50 ,50);
-    ctx.drawImage(info, xbox+160, ybox-130, 50 ,50);
+    ctx.drawImage(info, xbox+200, ybox-130, 50 ,50);
     ctx.drawImage(info, xbox-500, ybox, 50 ,50);
     ctx.drawImage(block, xbox-60, ybox, 50 ,50);
     ctx.drawImage(block, xbox-100, ybox, 50 ,50);
