@@ -281,35 +281,50 @@ function update(){
     ctx.drawImage(grass, u, canvas.height-40, canvas.width, 50);
     ctx.fillStyle = "#8B4513";
     ctx.fillRect(u,canvas.height-30,canvas.width*3,100);
+
     if(fact1){
         ctx.fillStyle = "white";
-        ctx.fillRect(xtext,ytext,200,200);
+        ctx.fillRect(xtext,ytext,300,300);
         ctx.fill();
         ctx.stroke();
+        ctx.font = "15px Ariel";
 
-        ctx.strokeText("JAPAN",xtext + 15,ytext + 10);
-        ctx.strokeText("IS THE BOMB", xtext + 15, ytext + 20);
-        ctx.strokeText("DOT COM", xtext + 15, ytext + 30);
+        ctx.strokeText("Japan’s national sport is sumo.",xtext + 10,ytext + 30);
+        ctx.strokeText("Going back to the 8th century,", xtext + 10, ytext + 50);
+        ctx.strokeText("sumo started as a prayer to have a", xtext + 10, ytext + 70);
+        ctx.strokeText("good rice harvest, but then turned",xtext + 10,ytext + 90);
+        ctx.strokeText("into a public sport, where two men",xtext + 10,ytext + 110);
+        ctx.strokeText("fight in a ring. The only way to",xtext + 10,ytext + 130);
+        ctx.strokeText("win is when one player knocked the",xtext + 10,ytext + 150);
+        ctx.strokeText("other player out of the ring or if any",xtext + 10,ytext + 170);
+        ctx.strokeText("of his body part except his feet touched",xtext + 10,ytext + 190);
+        ctx.strokeText("the ground. Sumo is still a large",xtext + 10,ytext + 210);
+        ctx.strokeText("Japanese tradition which still has",xtext + 10,ytext + 230);
+        ctx.strokeText("ancient customs and dress.",xtext + 10,ytext + 250);
+
+
     }
     if(fact2){
         ctx.fillStyle = "white";
-        ctx.fillRect(xtext,ytext,200,200);
+        ctx.fillRect(xtext,ytext,300,300);
         ctx.fill();
         ctx.stroke();
+        ctx.font = "15px Ariel";
 
-        ctx.strokeText("YOOO",xtext + 15,ytext + 10);
-        ctx.strokeText("IS THE BOMB", xtext + 15, ytext + 20);
-        ctx.strokeText("DOT COM", xtext + 15, ytext + 30);
+        ctx.strokeText("In Japanese buildings if the floor",xtext + 10,ytext + 30);
+        ctx.strokeText("is raised it helps show where you", xtext + 15, ytext + 50);
+        ctx.strokeText("should take off your shoes.", xtext + 15, ytext + 70);
     }
       if(fact3){
         ctx.fillStyle = "white";
-        ctx.fillRect(xtext,ytext,200,200);
+        ctx.fillRect(xtext,ytext,300,300);
         ctx.fill();
         ctx.stroke();
+        ctx.font = "15px Ariel";
 
-        ctx.strokeText("YOOO",xtext + 15,ytext + 10);
-        ctx.strokeText("IS THE BOMB", xtext + 15, ytext + 20);
-        ctx.strokeText("DOT COM", xtext + 15, ytext + 30);
+        ctx.strokeText("If you become sick in Japan you",xtext + 10,ytext + 30);
+        ctx.strokeText("should always wear a mask to keep", xtext + 15, ytext + 50);
+        ctx.strokeText("the disease from spreading.", xtext + 15, ytext + 70);
     }
 
 
