@@ -250,11 +250,11 @@ function update(){
     player.x += player.velX;
     player.y += player.velY;
 
-    if (player.x >= width) {
+    /*if (player.x >= width) {
         player.x = width-player.width;
     } else if (player.x <= 0) {
         player.x = 0;
-    }
+    }*/
 
     if(player.y >= height-player.height){
         player.y = height - player.height;
@@ -316,6 +316,89 @@ function update(){
 
 
     if (hitFlag){
+            for (var i = 0; i < boxes.length; i++) {
+        ctx.rect(boxes[i].x, boxes[i].y, boxes[i].width, boxes[i].height);
+
+        var dir = colCheck(player, boxes[0]);
+
+        if (dir === "l" || dir === "r") {
+            player.velX = 0;
+            player.jumping = false;
+        } else if (dir === "b") {
+            player.grounded = true;
+            player.jumping = false;
+            fact1 = true;
+        } else if (dir === "t") {
+            player.velY *= -1;
+        }
+
+    }
+    for (var i = 0; i < boxes.length; i++) {
+        ctx.rect(boxes[i].x, boxes[i].y, boxes[i].width, boxes[i].height);
+
+        var dir = colCheck(player, boxes[1]);
+
+        if (dir === "l" || dir === "r") {
+            player.velX = 0;
+            player.jumping = false;
+        } else if (dir === "b") {
+            player.grounded = true;
+            player.jumping = false;
+            fact2 = true;
+        } else if (dir === "t") {
+            player.velY *= -1;
+        }
+
+    }
+       for (var i = 0; i < boxes.length; i++) {
+        ctx.rect(boxes[i].x, boxes[i].y, boxes[i].width, boxes[i].height);
+
+        var dir = colCheck(player, boxes[2]);
+
+        if (dir === "l" || dir === "r") {
+            player.velX = 0;
+            player.jumping = false;
+        } else if (dir === "b") {
+            player.grounded = true;
+            player.jumping = false;
+            fact3 = true;
+        } else if (dir === "t") {
+            player.velY *= -1;
+        }
+
+    }
+    for (var i = 0; i < blocks.length; i++) {
+        ctx.rect(blocks[i].x, blocks[i].y, blocks[i].width, blocks[i].height);
+
+        var dir = colCheck(player, blocks[i]);
+
+        if (dir === "l" || dir === "r") {
+            player.velX = 0;
+            player.jumping = false;
+        } else if (dir === "b") {
+            player.grounded = true;
+            player.jumping = false;
+        } else if (dir === "t") {
+            player.velY *= -1;
+        }
+
+    }
+    for (var i = 0; i < flags.length; i++) {
+        ctx.rect(flags[i].x, flags[i].y, flags[i].width, flags[i].height);
+
+        var dir = colCheck(player, flags[i]);
+
+        if (dir === "l" || dir === "r") {
+            player.velX = 0;
+            player.jumping = false;
+            hitFlag = true;
+        } else if (dir === "b") {
+            player.grounded = true;
+            player.jumping = false;
+        } else if (dir === "t") {
+            player.velY *= -1;
+        }
+    }
 
         ctx.clearRect(0,0,width,height);
          ctx.drawImage(miami, 0, 0, width,height);
