@@ -71,18 +71,36 @@ var ybox = height-90;
 var xtext = 90;
 var ytext = 100;
 var boxes = [];
+var blocks= [];
 
 // dimensions
 boxes.push({
     x: xbox,
-    y: ybox-30,
-    width: 60,
-    height: 60
+    y: ybox-130,
+    width: 50,
+    height: 50
 });
-var blocks= [];
+boxes.push({
+    x: xbox+150,
+    y: ybox-130,
+    width: 50,
+    height: 50
+});
 blocks.push({
     x: xbox-60,
     y: ybox,
+    width: 50,
+    height: 50
+});
+blocks.push({
+    x: xbox-100,
+    y: ybox,
+    width: 50,
+    height: 50
+});
+blocks.push({
+    x: xbox-60,
+    y: ybox-50,
     width: 50,
     height: 50
 });
@@ -176,8 +194,11 @@ function update(){
     ctx.fillStyle = "black";
     ctx.beginPath();
 
-    ctx.drawImage(info, xbox, ybox-30, 60 ,60);
+    ctx.drawImage(info, xbox, ybox-130, 50 ,50);
+    ctx.drawImage(info, xbox+150, ybox-130, 50 ,50);
     ctx.drawImage(block, xbox-60, ybox, 50 ,50);
+    ctx.drawImage(block, xbox-100, ybox, 50 ,50);
+    ctx.drawImage(block, xbox-60, ybox-50, 50 ,50);
     ctx.drawImage(japan, player.x+25, player.y-60, 100,100);
     ctx.drawImage(image, player.x, player.y -25, player.width, player.height);
     ctx.drawImage(grass, u, canvas.height-40, canvas.width, 50);
