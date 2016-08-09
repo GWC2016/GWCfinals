@@ -22,13 +22,13 @@ japan.onload = function() {
         setInterval(loop, 1000 / 30);
     }
 miami = new Image();
-miami.src = "miamiNice.jpg";
+miami.src = "Countries/miamiNice.jpg";
 
 miami.onload = function() {
         setInterval(loop, 1000 / 30);
     }
 sunset = new Image();
-sunset.src = "sunset.jpg";
+sunset.src = "Countries/sunset.jpg";
 
 sunset.onload = function() {
         setInterval(loop, 1000 / 30);
@@ -410,7 +410,7 @@ function update(){
     ctx.drawImage(grass, u, canvas.height-40, canvas.width, 50);
     ctx.fillStyle = "#8B4513";
     ctx.fillRect(u,canvas.height-30,canvas.width*3,100);
-    ctx.drawImage(image, player.x-1200,player.y-25, player.width, player.height);
+    ctx.drawImage(image, player.x-2400,player.y-25, player.width, player.height);
 
 
     }
