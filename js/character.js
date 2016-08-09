@@ -93,9 +93,14 @@ var xtext = 0;
 var ytext = 0;
 var boxes = [];
 var blocks= [];
+var boxes2 = [];
+var blocks2=[];
 var fact1 = false;
 var fact2 = false;
 var fact3 = false;
+var fact4 = false;
+var fact5 = false;
+var fact6 = false;
 var hitFlag = false;
 var hitFlag2 = false;
 var flags = [];
@@ -138,13 +143,55 @@ blocks.push({
     height: 50
 });
 flags.push({
-    x: 1200,
+    x: 1250,
+    y: ybox,
+    width: 50,
+    height: 50
+});
+boxes2.push({
+    x: 1350,
+    y: ybox,
+    width: 50,
+    height: 50
+});
+boxes2.push({
+    x: 2200,
+    y: ybox-150,
+    width: 50,
+    height: 50
+});
+boxes2.push({
+    x: 1550,
+    y: ybox-80,
+    width: 50,
+    height: 50
+});
+blocks2.push({
+    x: 2150,
+    y: ybox-50,
+    width: 50,
+    height: 50
+});
+blocks2.push({
+    x: 2100,
+    y: ybox,
+    width: 50,
+    height: 50
+});
+blocks2.push({
+    x: 1400,
+    y: ybox,
+    width: 50,
+    height: 50
+});
+blocks2.push({
+    x: 1300,
     y: ybox,
     width: 50,
     height: 50
 });
 flags2.push({
-    x: 2400,
+    x: 2600,
     y: ybox,
     width: 50,
     height: 50
@@ -234,10 +281,78 @@ function update(){
         }
 
     }
+    for (var i = 0; i < boxes2.length; i++) {
+        ctx.rect(boxes2[i].x, boxes2[i].y, boxes2[i].width, boxes2[i].height);
+
+        var dir = colCheck(player, boxes2[0]);
+
+        if (dir === "l" || dir === "r") {
+            player.velX = 0;
+            player.jumping = false;
+        } else if (dir === "b") {
+            player.grounded = true;
+            player.jumping = false;
+            fact4 = true;
+        } else if (dir === "t") {
+            player.velY *= -1;
+        }
+
+    }
+     for (var i = 0; i < boxes2.length; i++) {
+        ctx.rect(boxes2[i].x, boxes2[i].y, boxes2[i].width, boxes2[i].height);
+
+        var dir = colCheck(player, boxes2[1]);
+
+        if (dir === "l" || dir === "r") {
+            player.velX = 0;
+            player.jumping = false;
+        } else if (dir === "b") {
+            player.grounded = true;
+            player.jumping = false;
+            fact5 = true;
+        } else if (dir === "t") {
+            player.velY *= -1;
+        }
+
+    }
+     for (var i = 0; i < boxes2.length; i++) {
+        ctx.rect(boxes2[i].x, boxes2[i].y, boxes2[i].width, boxes2[i].height);
+
+        var dir = colCheck(player, boxes2[2]);
+
+        if (dir === "l" || dir === "r") {
+            player.velX = 0;
+            player.jumping = false;
+        } else if (dir === "b") {
+            player.grounded = true;
+            player.jumping = false;
+            fact6= true;
+        } else if (dir === "t") {
+            player.velY *= -1;
+        }
+
+    }
+
     for (var i = 0; i < blocks.length; i++) {
         ctx.rect(blocks[i].x, blocks[i].y, blocks[i].width, blocks[i].height);
 
         var dir = colCheck(player, blocks[i]);
+
+        if (dir === "l" || dir === "r") {
+            player.velX = 0;
+            player.jumping = false;
+        } else if (dir === "b") {
+            player.grounded = true;
+            player.jumping = false;
+        } else if (dir === "t") {
+            player.velY *= -1;
+        }
+
+    }
+       for (var i = 0; i < blocks2.length; i++) {
+        ctx.rect(blocks2[i].x, blocks2[i].y, blocks2[i].width, blocks2[i].height);
+
+        var dir = colCheck(player, blocks2[i]);
 
         if (dir === "l" || dir === "r") {
             player.velX = 0;
@@ -313,7 +428,7 @@ function update(){
     ctx.drawImage(block, xbox-100, ybox, 50 ,50);
     ctx.drawImage(block, xbox-60, ybox-50, 50 ,50);
     ctx.drawImage(block, xbox-80, ybox, 50 ,50);
-    ctx.drawImage(brazilflag, 1300, ybox-70, 120 ,120);
+    ctx.drawImage(brazilflag, 1250, ybox-70, 120 ,120);
     ctx.drawImage(japanflag, 0, ybox-70, 120 ,120);
     ctx.drawImage(image, player.x, player.y -25, player.width, player.height);
     ctx.drawImage(grass, u, canvas.height-40, canvas.width, 50);
@@ -377,20 +492,54 @@ function update(){
     ctx.fillStyle = "black";
     ctx.beginPath();
 
-    ctx.drawImage(info, xbox, ybox-130, 50 ,50);
-    ctx.drawImage(info, xbox+200, ybox-130, 50 ,50);
-    ctx.drawImage(info, xbox-500, ybox, 50 ,50);
-    ctx.drawImage(block, xbox-60, ybox, 50 ,50);
-    ctx.drawImage(block, xbox-100, ybox, 50 ,50);
-    ctx.drawImage(block, xbox-60, ybox-50, 50 ,50);
+    ctx.drawImage(info, xbox-650, ybox, 50 ,50);
+    ctx.drawImage(info, xbox+200, ybox-150, 50 ,50);
+    ctx.drawImage(info, xbox-450, ybox-80, 50 ,50);
+    ctx.drawImage(block, xbox+150, ybox-50, 50 ,50);
+    ctx.drawImage(block, xbox+100, ybox, 50 ,50);
+    ctx.drawImage(block, xbox-600, ybox, 50 ,50);
 
-    ctx.drawImage(block, xbox-80, ybox, 50 ,50);
+    ctx.drawImage(block, xbox-700, ybox, 50 ,50);
+    ctx.drawImage(block, xbox-750, ybox, 50 ,50);
 
     ctx.drawImage(grass, u, canvas.height-40, canvas.width, 50);
     ctx.fillStyle = "#8B4513";
     ctx.fillRect(u,canvas.height-30,canvas.width*3,100);
-    ctx.drawImage(image, player.x-1150,player.y-25, player.width, player.height);
+    ctx.drawImage(image, player.x-1200,player.y-25, player.width, player.height);
 
+    if(fact4){
+        ctx.fillStyle = "white";
+        ctx.fillRect(xtext,ytext,300,300);
+        ctx.fill();
+        ctx.stroke();
+        ctx.font = "15px Ariel";
+
+        ctx.strokeText("In Japanese buildings if the floor",xtext + 10,ytext + 30);
+        ctx.strokeText("is raised it helps show where you", xtext + 15, ytext + 50);
+        ctx.strokeText("should take off your shoes.", xtext + 15, ytext + 70);
+    }
+    if(fact5){
+        ctx.fillStyle = "white";
+        ctx.fillRect(xtext,ytext,300,300);
+        ctx.fill();
+        ctx.stroke();
+        ctx.font = "15px Ariel";
+
+        ctx.strokeText("In Japanese buildings if the floor",xtext + 10,ytext + 30);
+        ctx.strokeText("is raised it helps show where you", xtext + 15, ytext + 50);
+        ctx.strokeText("should take off your shoes.", xtext + 15, ytext + 70);
+    }
+      if(fact6){
+        ctx.fillStyle = "white";
+        ctx.fillRect(xtext,ytext,300,300);
+        ctx.fill();
+        ctx.stroke();
+        ctx.font = "15px Ariel";
+
+        ctx.strokeText("If you become sick in Japan you",xtext + 10,ytext + 30);
+        ctx.strokeText("should always wear a mask to keep", xtext + 15, ytext + 50);
+        ctx.strokeText("the disease from spreading.", xtext + 15, ytext + 70);
+    }
 
     }
     if (hitFlag2){
