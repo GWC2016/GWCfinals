@@ -235,7 +235,7 @@ blocks3.push({
     height: 50
 });
 blocks3.push({
-    x: 3400,
+    x: 3300,
     y: ybox-130,
     width: 50,
     height: 50
@@ -247,7 +247,7 @@ boxes3.push({
     height: 50
 });
 boxes3.push({
-    x: 3300,
+    x: 3400,
     y: ybox-130,
     width: 50,
     height: 50
