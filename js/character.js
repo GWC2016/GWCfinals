@@ -105,6 +105,7 @@ var hitFlag = false;
 var hitFlag2 = false;
 var flags = [];
 var flags2 = [];
+var score = 0;
 // dimensions
 boxes.push({
     x: xbox-500,
@@ -242,6 +243,7 @@ function update(){
             player.grounded = true;
             player.jumping = false;
             fact1 = true;
+            score+=1;
         } else if (dir === "t") {
             player.velY *= -1;
         }
@@ -259,6 +261,7 @@ function update(){
             player.grounded = true;
             player.jumping = false;
             fact2 = true;
+            score+=1;
         } else if (dir === "t") {
             player.velY *= -1;
         }
@@ -276,6 +279,7 @@ function update(){
             player.grounded = true;
             player.jumping = false;
             fact3 = true;
+            score+=1;
         } else if (dir === "t") {
             player.velY *= -1;
         }
@@ -293,6 +297,7 @@ function update(){
             player.grounded = true;
             player.jumping = false;
             fact4 = true;
+            score+=1;
         } else if (dir === "t") {
             player.velY *= -1;
         }
@@ -310,6 +315,7 @@ function update(){
             player.grounded = true;
             player.jumping = false;
             fact5 = true;
+            score+=1;
         } else if (dir === "t") {
             player.velY *= -1;
         }
@@ -327,6 +333,7 @@ function update(){
             player.grounded = true;
             player.jumping = false;
             fact6= true;
+            score+=1;
         } else if (dir === "t") {
             player.velY *= -1;
         }
@@ -420,7 +427,9 @@ function update(){
     ctx.drawImage(japan, 0, 0, width,height);
     ctx.fillStyle = "black";
     ctx.beginPath();
-
+     ctx.stroke();
+        ctx.font = "20px Ariel";
+        ctx.strokeText("Score: "+score,xtext + 1000,ytext + 30);
     ctx.drawImage(info, xbox, ybox-130, 50 ,50);
     ctx.drawImage(info, xbox+200, ybox-130, 50 ,50);
     ctx.drawImage(info, xbox-500, ybox, 50 ,50);
@@ -491,6 +500,9 @@ function update(){
     ctx.drawImage(brazil, 0, 0, width,height);
     ctx.fillStyle = "black";
     ctx.beginPath();
+         ctx.stroke();
+        ctx.font = "20px Ariel";
+        ctx.strokeText("Score: "+score,xtext + 1000,ytext + 30);
 
     ctx.drawImage(info, xbox-650, ybox, 50 ,50);
     ctx.drawImage(info, xbox+200, ybox-150, 50 ,50);
@@ -549,7 +561,9 @@ function update(){
     ctx.drawImage(india, 0, 0, width,height);
     ctx.fillStyle = "black";
     ctx.beginPath();
-
+         ctx.stroke();
+        ctx.font = "20px Ariel";
+        ctx.strokeText("Score: "+score,xtext + 1000,ytext + 30);
     ctx.drawImage(info, xbox, ybox-130, 50 ,50);
     ctx.drawImage(info, xbox+200, ybox-130, 50 ,50);
     ctx.drawImage(info, xbox-500, ybox, 50 ,50);
