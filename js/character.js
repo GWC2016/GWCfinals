@@ -2,11 +2,9 @@
     var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
     window.requestAnimationFrame = requestAnimationFrame;
 })();
-var background = new Image();
-background.src = "japan.jpg";
-
-// Make sure the image is loaded first otherwise nothing will draw.
-background.onload = function(){
+var japan = new Image();
+japan.src = "Countries/japan.jpg";
+japan.onload = function(){
     setInterval(loop,1000/30);
 }
 image = new Image();
@@ -15,22 +13,34 @@ image.src = "js/girl.png";
 image.onload = function() {
         setInterval(loop, 1000 / 30);
     }
-japan = new Image();
-japan.src = "flags/japan.png";
+japanflag = new Image();
+japanflag.src = "flags/japan.png";
 
-japan.onload = function() {
+japanflag.onload = function() {
         setInterval(loop, 1000 / 30);
     }
-miami = new Image();
-miami.src = "Countries/miamiNice.jpg";
+brazilflag = new Image();
+brazilflag.src = "flags/brazilflag.png";
 
-miami.onload = function() {
+brazilflag.onload = function() {
         setInterval(loop, 1000 / 30);
     }
-sunset = new Image();
-sunset.src = "Countries/sunset.jpg";
+indianflag = new Image();
+indianflag.src = "flags/indianflag.png";
 
-sunset.onload = function() {
+indianflag.onload = function() {
+        setInterval(loop, 1000 / 30);
+    }
+brazil = new Image();
+brazil.src = "Countries/brazil.jpg";
+
+brazil.onload = function() {
+        setInterval(loop, 1000 / 30);
+    }
+india = new Image();
+india.src = "Countries/india.jpg";
+
+india.onload = function() {
         setInterval(loop, 1000 / 30);
     }
 run = new Image();
@@ -292,7 +302,7 @@ function update(){
     }
 
     ctx.clearRect(0, 0, width, height);
-    ctx.drawImage(background, 0, 0, width,height);
+    ctx.drawImage(japan, 0, 0, width,height);
     ctx.fillStyle = "black";
     ctx.beginPath();
 
@@ -303,14 +313,13 @@ function update(){
     ctx.drawImage(block, xbox-100, ybox, 50 ,50);
     ctx.drawImage(block, xbox-60, ybox-50, 50 ,50);
     ctx.drawImage(block, xbox-80, ybox, 50 ,50);
-    ctx.drawImage(japan, 1200, ybox, 50 ,50);
-
-
-    //ctx.drawImage(japan, player.x+25, player.y-60, 100,100);
+    ctx.drawImage(brazilflag, 1300, ybox-70, 120 ,120);
+    ctx.drawImage(japanflag, 0, ybox-70, 120 ,120);
     ctx.drawImage(image, player.x, player.y -25, player.width, player.height);
     ctx.drawImage(grass, u, canvas.height-40, canvas.width, 50);
     ctx.fillStyle = "#8B4513";
     ctx.fillRect(u,canvas.height-30,canvas.width*3,100);
+
 
     if(fact1){
         ctx.fillStyle = "white";
@@ -364,7 +373,7 @@ function update(){
 
 
     ctx.clearRect(0,0,width,height);
-    ctx.drawImage(miami, 0, 0, width,height);
+    ctx.drawImage(brazil, 0, 0, width,height);
     ctx.fillStyle = "black";
     ctx.beginPath();
 
@@ -375,15 +384,12 @@ function update(){
     ctx.drawImage(block, xbox-100, ybox, 50 ,50);
     ctx.drawImage(block, xbox-60, ybox-50, 50 ,50);
 
-
     ctx.drawImage(block, xbox-80, ybox, 50 ,50);
 
-
-    //ctx.drawImage(japan, player.x+25, player.y-60, 100,100);
     ctx.drawImage(grass, u, canvas.height-40, canvas.width, 50);
     ctx.fillStyle = "#8B4513";
     ctx.fillRect(u,canvas.height-30,canvas.width*3,100);
-    ctx.drawImage(image, player.x-1200,player.y-25, player.width, player.height);
+    ctx.drawImage(image, player.x-1150,player.y-25, player.width, player.height);
 
 
     }
@@ -391,7 +397,7 @@ function update(){
 
 
     ctx.clearRect(0,0,width,height);
-    ctx.drawImage(sunset, 0, 0, width,height);
+    ctx.drawImage(india, 0, 0, width,height);
     ctx.fillStyle = "black";
     ctx.beginPath();
 
