@@ -27,6 +27,12 @@ miami.src = "miamiNice.jpg";
 miami.onload = function() {
         setInterval(loop, 1000 / 30);
     }
+sunset = new Image();
+sunset.src = "sunset.jpg";
+
+sunset.onload = function() {
+        setInterval(loop, 1000 / 30);
+    }
 run = new Image();
 run.src = "girl.running.png";
 
@@ -81,7 +87,9 @@ var fact1 = false;
 var fact2 = false;
 var fact3 = false;
 var hitFlag = false;
+var hitFlag2 = false;
 var flags = [];
+var flags2 = [];
 // dimensions
 boxes.push({
     x: xbox-500,
@@ -121,6 +129,12 @@ blocks.push({
 });
 flags.push({
     x: 1200,
+    y: ybox,
+    width: 50,
+    height: 50
+});
+flags2.push({
+    x: 2400,
     y: ybox,
     width: 50,
     height: 50
@@ -242,6 +256,22 @@ function update(){
             player.velY *= -1;
         }
     }
+    for (var i = 0; i < flags2.length; i++) {
+        ctx.rect(flags2[i].x, flags2[i].y, flags2[i].width, flags[i].height);
+
+        var dir = colCheck(player, flags2[i]);
+
+        if (dir === "l" || dir === "r") {
+            player.velX = 0;
+            player.jumping = false;
+            hitFlag2 = true;
+        } else if (dir === "b") {
+            player.grounded = true;
+            player.jumping = false;
+        } else if (dir === "t") {
+            player.velY *= -1;
+        }
+    }
 
     if(player.grounded){
          player.velY = 0;
@@ -331,92 +361,10 @@ function update(){
 
 
     if (hitFlag){
-            for (var i = 0; i < boxes.length; i++) {
-        ctx.rect(boxes[i].x, boxes[i].y, boxes[i].width, boxes[i].height);
 
-        var dir = colCheck(player, boxes[0]);
 
-        if (dir === "l" || dir === "r") {
-            player.velX = 0;
-            player.jumping = false;
-        } else if (dir === "b") {
-            player.grounded = true;
-            player.jumping = false;
-            fact1 = true;
-        } else if (dir === "t") {
-            player.velY *= -1;
-        }
-
-    }
-    for (var i = 0; i < boxes.length; i++) {
-        ctx.rect(boxes[i].x, boxes[i].y, boxes[i].width, boxes[i].height);
-
-        var dir = colCheck(player, boxes[1]);
-
-        if (dir === "l" || dir === "r") {
-            player.velX = 0;
-            player.jumping = false;
-        } else if (dir === "b") {
-            player.grounded = true;
-            player.jumping = false;
-            fact2 = true;
-        } else if (dir === "t") {
-            player.velY *= -1;
-        }
-
-    }
-       for (var i = 0; i < boxes.length; i++) {
-        ctx.rect(boxes[i].x, boxes[i].y, boxes[i].width, boxes[i].height);
-
-        var dir = colCheck(player, boxes[2]);
-
-        if (dir === "l" || dir === "r") {
-            player.velX = 0;
-            player.jumping = false;
-        } else if (dir === "b") {
-            player.grounded = true;
-            player.jumping = false;
-            fact3 = true;
-        } else if (dir === "t") {
-            player.velY *= -1;
-        }
-
-    }
-    for (var i = 0; i < blocks.length; i++) {
-        ctx.rect(blocks[i].x, blocks[i].y, blocks[i].width, blocks[i].height);
-
-        var dir = colCheck(player, blocks[i]);
-
-        if (dir === "l" || dir === "r") {
-            player.velX = 0;
-            player.jumping = false;
-        } else if (dir === "b") {
-            player.grounded = true;
-            player.jumping = false;
-        } else if (dir === "t") {
-            player.velY *= -1;
-        }
-
-    }
-    for (var i = 0; i < flags.length; i++) {
-        ctx.rect(flags[i].x, flags[i].y, flags[i].width, flags[i].height);
-
-        var dir = colCheck(player, flags[i]);
-
-        if (dir === "l" || dir === "r") {
-            player.velX = 0;
-            player.jumping = false;
-            hitFlag = true;
-        } else if (dir === "b") {
-            player.grounded = true;
-            player.jumping = false;
-        } else if (dir === "t") {
-            player.velY *= -1;
-        }
-    }
-
-        ctx.clearRect(0,0,width,height);
-         ctx.drawImage(miami, 0, 0, width,height);
+    ctx.clearRect(0,0,width,height);
+    ctx.drawImage(miami, 0, 0, width,height);
     ctx.fillStyle = "black";
     ctx.beginPath();
 
@@ -435,10 +383,38 @@ function update(){
     ctx.drawImage(grass, u, canvas.height-40, canvas.width, 50);
     ctx.fillStyle = "#8B4513";
     ctx.fillRect(u,canvas.height-30,canvas.width*3,100);
-    ctx.drawImage(image, player.x-1100,player.y-25, player.width, player.height);
+    ctx.drawImage(image, player.x-1200,player.y-25, player.width, player.height);
 
 
     }
+    if (hitFlag2){
+
+
+    ctx.clearRect(0,0,width,height);
+    ctx.drawImage(sunset, 0, 0, width,height);
+    ctx.fillStyle = "black";
+    ctx.beginPath();
+
+    ctx.drawImage(info, xbox, ybox-130, 50 ,50);
+    ctx.drawImage(info, xbox+200, ybox-130, 50 ,50);
+    ctx.drawImage(info, xbox-500, ybox, 50 ,50);
+    ctx.drawImage(block, xbox-60, ybox, 50 ,50);
+    ctx.drawImage(block, xbox-100, ybox, 50 ,50);
+    ctx.drawImage(block, xbox-60, ybox-50, 50 ,50);
+
+
+    ctx.drawImage(block, xbox-80, ybox, 50 ,50);
+
+
+    //ctx.drawImage(japan, player.x+25, player.y-60, 100,100);
+    ctx.drawImage(grass, u, canvas.height-40, canvas.width, 50);
+    ctx.fillStyle = "#8B4513";
+    ctx.fillRect(u,canvas.height-30,canvas.width*3,100);
+    ctx.drawImage(image, player.x-1200,player.y-25, player.width, player.height);
+
+
+    }
+
 
 
 
