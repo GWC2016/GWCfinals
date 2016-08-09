@@ -235,7 +235,7 @@ blocks3.push({
     height: 50
 });
 blocks3.push({
-    x: 3200,
+    x: 3400,
     y: ybox-130,
     width: 50,
     height: 50
@@ -253,7 +253,7 @@ boxes3.push({
     height: 50
 });
 boxes3.push({
-    x: 3400,
+    x: 3200,
     y: ybox-130,
     width: 50,
     height: 50
@@ -411,6 +411,7 @@ function update(){
             player.grounded = true;
             player.jumping = false;
             fact7= true;
+            score +=1
         } else if (dir === "t") {
             player.velY *= -1;
         }
@@ -428,6 +429,7 @@ function update(){
             player.grounded = true;
             player.jumping = false;
             fact8= true;
+            score += 1
         } else if (dir === "t") {
             player.velY *= -1;
         }
@@ -445,6 +447,7 @@ function update(){
             player.grounded = true;
             player.jumping = false;
             fact9= true;
+            score += 1
         } else if (dir === "t") {
             player.velY *= -1;
         }
