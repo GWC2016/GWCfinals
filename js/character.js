@@ -31,6 +31,12 @@ indianflag.src = "flags/indianflag.png";
 indianflag.onload = function() {
         setInterval(loop, 1000 / 30);
     }
+eritreanflag = new Image();
+eritreanflag.src = "flags/eritreanflag.png";
+
+eritreanflag.onload = function() {
+        setInterval(loop, 1000 / 30);
+    }
 brazil = new Image();
 brazil.src = "Countries/brazil.jpg";
 
@@ -205,7 +211,7 @@ flags2.push({
 });
 
 flags3.push({
-    x: 4000,
+    x: 3700,
     y: ybox,
     width: 50,
     height: 50
@@ -727,7 +733,7 @@ function update(){
     ctx.fillStyle = "#8B4513";
     ctx.fillRect(u,canvas.height-30,canvas.width*3,100);
     ctx.drawImage(image, player.x-2400,player.y-25, player.width, player.height);
-    ctx.drawImage(indianflag, 1300, ybox-70, 120 ,120);
+    ctx.drawImage(eritreanflag, 1300, ybox-60, 120 ,120);
 
 
         if(fact7){
