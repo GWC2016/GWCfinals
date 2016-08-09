@@ -85,7 +85,7 @@ var canvas = document.getElementById("canvas"),
       grounded: false
     },
     keys = [],
-    friction = 0.8,
+    friction = .8,
     gravity = 0.3;
 var xbox = 800;
 var ybox = height-90;
@@ -96,6 +96,7 @@ var blocks= [];
 var boxes2 = [];
 var blocks2=[];
 var boxes3 =[];
+var blocks3 = [];
 var fact1 = false;
 var fact2 = false;
 var fact3 = false;
@@ -109,6 +110,7 @@ var hitFlag = false;
 var hitFlag2 = false;
 var flags = [];
 var flags2 = [];
+var flags3 = [];
 var score = 0;
 // dimensions
 boxes.push({
@@ -196,31 +198,66 @@ blocks2.push({
     height: 50
 });
 flags2.push({
-    x: 2600,
+    x: 2500,
     y: ybox,
     width: 50,
     height: 50
 });
-boxes3.push({
-    x: 4600,
-    y: ybox-130,
-    width: 50,
-    height: 50
-});
-boxes3.push({
-    x: 4700,
-    y: ybox-130,
-    width: 50,
-    height: 50
-});
-boxes3.push({
-    x: 4800,
-    y: ybox-130,
-    width: 50,
-    height: 50
-});
 
-
+flags3.push({
+    x: 4000,
+    y: ybox,
+    width: 50,
+    height: 50
+});
+blocks3.push({
+    x: 2700,
+    y: ybox,
+    width: 50,
+    height: 50
+});
+blocks3.push({
+    x: 2800,
+    y: ybox-50,
+    width: 50,
+    height: 50
+});
+blocks3.push({
+    x: 2850,
+    y: ybox-50,
+    width: 50,
+    height: 50
+});
+blocks3.push({
+    x: 3050,
+    y: ybox-130,
+    width: 50,
+    height: 50
+});
+blocks3.push({
+    x: 3200,
+    y: ybox-130,
+    width: 50,
+    height: 50
+});
+boxes3.push({
+    x: 2950,
+    y: ybox-130,
+    width: 50,
+    height: 50
+});
+boxes3.push({
+    x: 3300,
+    y: ybox-130,
+    width: 50,
+    height: 50
+});
+boxes3.push({
+    x: 3400,
+    y: ybox-130,
+    width: 50,
+    height: 50
+});
 
 canvas.width = width;
 canvas.height = height;
@@ -242,12 +279,12 @@ function update(){
             player.velX++;
             }
         }
-//    if (keys[37]) {
-//            // left arrow
-//        if (player.velX > -player.speed) {
-//            player.velX--;
-//            }
-//        }
+    if (keys[37]) {
+            // left arrow
+        if (player.velX > -player.speed) {
+            player.velX--;
+            }
+        }
 
     player.velX *= friction;
     player.velY += gravity;
@@ -446,6 +483,22 @@ function update(){
         }
 
     }
+        for (var i = 0; i < blocks3.length; i++) {
+        ctx.rect(blocks3[i].x, blocks3[i].y, blocks3[i].width, blocks3[i].height);
+
+        var dir = colCheck(player, blocks3[i]);
+
+        if (dir === "l" || dir === "r") {
+            player.velX = 0;
+            player.jumping = false;
+        } else if (dir === "b") {
+            player.grounded = true;
+            player.jumping = false;
+        } else if (dir === "t") {
+            player.velY *= -1;
+        }
+
+    }
     for (var i = 0; i < flags.length; i++) {
         ctx.rect(flags[i].x, flags[i].y, flags[i].width, flags[i].height);
 
@@ -463,9 +516,25 @@ function update(){
         }
     }
     for (var i = 0; i < flags2.length; i++) {
-        ctx.rect(flags2[i].x, flags2[i].y, flags2[i].width, flags[i].height);
+        ctx.rect(flags2[i].x, flags2[i].y, flags2[i].width, flags2[i].height);
 
         var dir = colCheck(player, flags2[i]);
+
+        if (dir === "l" || dir === "r") {
+            player.velX = 0;
+            player.jumping = false;
+            hitFlag2 = true;
+        } else if (dir === "b") {
+            player.grounded = true;
+            player.jumping = false;
+        } else if (dir === "t") {
+            player.velY *= -1;
+        }
+    }
+        for (var i = 0; i < flags3.length; i++) {
+        ctx.rect(flags3[i].x, flags3[i].y, flags3[i].width, flags3[i].height);
+
+        var dir = colCheck(player, flags3[i]);
 
         if (dir === "l" || dir === "r") {
             player.velX = 0;
@@ -646,7 +715,7 @@ function update(){
     ctx.drawImage(block, 300, ybox, 50 ,50);
     ctx.drawImage(block, 400, ybox-50, 50 ,50);
     ctx.drawImage(block, 450, ybox-50, 50 ,50);
-
+    ctx.drawImage(block, 100, ybox, 50 ,50);
     ctx.drawImage(block, 650, ybox-130, 50 ,50);
 
 
@@ -654,7 +723,8 @@ function update(){
     ctx.drawImage(grass, u, canvas.height-40, canvas.width, 50);
     ctx.fillStyle = "#8B4513";
     ctx.fillRect(u,canvas.height-30,canvas.width*3,100);
-    ctx.drawImage(image, player.x-2600,player.y-25, player.width, player.height);
+    ctx.drawImage(image, player.x-2400,player.y-25, player.width, player.height);
+    ctx.drawImage(indianflag, 1300, ybox-70, 120 ,120);
 
 
         if(fact7){
