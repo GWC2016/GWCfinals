@@ -95,12 +95,16 @@ var boxes = [];
 var blocks= [];
 var boxes2 = [];
 var blocks2=[];
+var boxes3 =[];
 var fact1 = false;
 var fact2 = false;
 var fact3 = false;
 var fact4 = false;
 var fact5 = false;
 var fact6 = false;
+var fact7 = false;
+var fact8 = false;
+var fact9 = false;
 var hitFlag = false;
 var hitFlag2 = false;
 var flags = [];
@@ -197,6 +201,25 @@ flags2.push({
     width: 50,
     height: 50
 });
+boxes3.push({
+    x: 4600,
+    y: ybox-130,
+    width: 50,
+    height: 50
+});
+boxes3.push({
+    x: 4700,
+    y: ybox-130,
+    width: 50,
+    height: 50
+});
+boxes3.push({
+    x: 4800,
+    y: ybox-130,
+    width: 50,
+    height: 50
+});
+
 
 
 canvas.width = width;
@@ -334,6 +357,57 @@ function update(){
             player.jumping = false;
             fact6= true;
             score+=1;
+        } else if (dir === "t") {
+            player.velY *= -1;
+        }
+
+    }
+        for (var i = 0; i < boxes3.length; i++) {
+        ctx.rect(boxes3[i].x, boxes3[i].y, boxes3[i].width, boxes3[i].height);
+
+        var dir = colCheck(player, boxes3[0]);
+
+        if (dir === "l" || dir === "r") {
+            player.velX = 0;
+            player.jumping = false;
+        } else if (dir === "b") {
+            player.grounded = true;
+            player.jumping = false;
+            fact7= true;
+        } else if (dir === "t") {
+            player.velY *= -1;
+        }
+
+    }
+         for (var i = 0; i < boxes3.length; i++) {
+        ctx.rect(boxes3[i].x, boxes3[i].y, boxes3[i].width, boxes3[i].height);
+
+        var dir = colCheck(player, boxes3[1]);
+
+        if (dir === "l" || dir === "r") {
+            player.velX = 0;
+            player.jumping = false;
+        } else if (dir === "b") {
+            player.grounded = true;
+            player.jumping = false;
+            fact8= true;
+        } else if (dir === "t") {
+            player.velY *= -1;
+        }
+
+    }
+        for (var i = 0; i < boxes3.length; i++) {
+        ctx.rect(boxes3[i].x, boxes3[i].y, boxes3[i].width, boxes3[i].height);
+
+        var dir = colCheck(player, boxes3[2]);
+
+        if (dir === "l" || dir === "r") {
+            player.velX = 0;
+            player.jumping = false;
+        } else if (dir === "b") {
+            player.grounded = true;
+            player.jumping = false;
+            fact9= true;
         } else if (dir === "t") {
             player.velY *= -1;
         }
@@ -518,6 +592,7 @@ function update(){
     ctx.fillStyle = "#8B4513";
     ctx.fillRect(u,canvas.height-30,canvas.width*3,100);
     ctx.drawImage(image, player.x-1200,player.y-25, player.width, player.height);
+    ctx.drawImage(indianflag, 1300, ybox-70, 120 ,120);
 
     if(fact4){
         ctx.fillStyle = "white";
@@ -566,20 +641,55 @@ function update(){
         ctx.strokeText("Score: "+score,xtext + 1000,ytext + 30);
     ctx.drawImage(info, xbox, ybox-130, 50 ,50);
     ctx.drawImage(info, xbox+200, ybox-130, 50 ,50);
-    ctx.drawImage(info, xbox-500, ybox, 50 ,50);
-    ctx.drawImage(block, xbox-60, ybox, 50 ,50);
-    ctx.drawImage(block, xbox-100, ybox, 50 ,50);
-    ctx.drawImage(block, xbox-60, ybox-50, 50 ,50);
+    ctx.drawImage(info, 550, ybox-130, 50 ,50);
+    ctx.drawImage(block, 900, ybox-130, 50 ,50);
+    ctx.drawImage(block, 300, ybox, 50 ,50);
+    ctx.drawImage(block, 400, ybox-50, 50 ,50);
+    ctx.drawImage(block, 450, ybox-50, 50 ,50);
 
-
-    ctx.drawImage(block, xbox-80, ybox, 50 ,50);
+    ctx.drawImage(block, 650, ybox-130, 50 ,50);
 
 
     //ctx.drawImage(japan, player.x+25, player.y-60, 100,100);
     ctx.drawImage(grass, u, canvas.height-40, canvas.width, 50);
     ctx.fillStyle = "#8B4513";
     ctx.fillRect(u,canvas.height-30,canvas.width*3,100);
-    ctx.drawImage(image, player.x-2400,player.y-25, player.width, player.height);
+    ctx.drawImage(image, player.x-2600,player.y-25, player.width, player.height);
+
+
+        if(fact7){
+        ctx.fillStyle = "white";
+        ctx.fillRect(xtext,ytext,300,300);
+        ctx.fill();
+        ctx.stroke();
+        ctx.font = "15px Ariel";
+
+        ctx.strokeText("In Japanese buildings if the floor",xtext + 10,ytext + 30);
+        ctx.strokeText("is raised it helps show where you", xtext + 15, ytext + 50);
+        ctx.strokeText("should take off your shoes.", xtext + 15, ytext + 70);
+    }
+    if(fact8){
+        ctx.fillStyle = "white";
+        ctx.fillRect(xtext,ytext,300,300);
+        ctx.fill();
+        ctx.stroke();
+        ctx.font = "15px Ariel";
+
+        ctx.strokeText("In Japanese buildings if the floor",xtext + 10,ytext + 30);
+        ctx.strokeText("is raised it helps show where you", xtext + 15, ytext + 50);
+        ctx.strokeText("should take off your shoes.", xtext + 15, ytext + 70);
+    }
+      if(fact9){
+        ctx.fillStyle = "white";
+        ctx.fillRect(xtext,ytext,300,300);
+        ctx.fill();
+        ctx.stroke();
+        ctx.font = "15px Ariel";
+
+        ctx.strokeText("If you become sick in Japan you",xtext + 10,ytext + 30);
+        ctx.strokeText("should always wear a mask to keep", xtext + 15, ytext + 50);
+        ctx.strokeText("the disease from spreading.", xtext + 15, ytext + 70);
+    }
 
 
     }
