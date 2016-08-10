@@ -340,7 +340,7 @@ flags4.push({
     height: 50
 });
 flags5.push({
-    x: 4900,
+    x: 5800,
     y: ybox,
     width: 50,
     height: 50
@@ -1049,32 +1049,26 @@ function update(){
                  ctx.drawImage(grass, u, canvas.height-40, canvas.width, 50);
                 ctx.fillStyle = "#8B4513";
                 ctx.fillRect(u,canvas.height-30,canvas.width*3,100);
-                ctx.drawImage(info, xbox+200, ybox-130, 50 ,50);
+                ctx.drawImage(block, xbox-400, ybox, 50 ,50);
                 ctx.drawImage(startflag, 1300, ybox-60, 120 ,120);
                 ctx.drawImage(image, player.x-4500,player.y-25, player.width, player.height);
 
         }
-            if (hitFlag5){
-                ctx.clearRect(0,0,width,height);
-                score = 0;
-                update();
-            }
 
 
 
 
     }
- if (hitFlag5){
-        ctx.clearRect(0,0,width,height);
-        score = 0;
-        update();
-            }
 
 
 
 
   requestAnimationFrame(update);
 }
+if (hitFlag5){
+        score = 0;
+        update();
+            }
 
 function colCheck(shapeA, shapeB) {
     // get the vectors to check against
