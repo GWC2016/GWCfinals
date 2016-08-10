@@ -340,7 +340,7 @@ flags4.push({
     height: 50
 });
 flags5.push({
-    x: 5800,
+    x: 5810,
     y: ybox,
     width: 50,
     height: 50
@@ -1065,10 +1065,7 @@ function update(){
 
   requestAnimationFrame(update);
 }
-if (hitFlag5){
-        score = 0;
-        update();
-            }
+
 
 function colCheck(shapeA, shapeB) {
     // get the vectors to check against
@@ -1116,3 +1113,4 @@ document.body.addEventListener("keyup", function(e) {
 window.addEventListener("load",function(){
     update();
 });
+
