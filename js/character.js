@@ -765,6 +765,8 @@ function update(){
     ctx.beginPath();
      ctx.stroke();
         ctx.font = "20px Ariel";
+        ctx.strokeText("JAPAN",xtext + 650,ytext + 30);
+        ctx.font = "20px Ariel";
         ctx.strokeText("Score: "+score,xtext + 1000,ytext + 30);
     ctx.drawImage(info, xbox, ybox-130, 50 ,50);
     ctx.drawImage(info, xbox+200, ybox-130, 50 ,50);
@@ -838,6 +840,8 @@ function update(){
     ctx.beginPath();
          ctx.stroke();
         ctx.font = "20px Ariel";
+        ctx.strokeText("BRAZIL",xtext + 650,ytext + 30);
+        ctx.font = "20px Ariel";
         ctx.strokeText("Score: "+score,xtext + 1000,ytext + 30);
 
     ctx.drawImage(info, xbox-650, ybox, 50 ,50);
@@ -899,6 +903,8 @@ function update(){
     ctx.fillStyle = "black";
     ctx.beginPath();
          ctx.stroke();
+        ctx.font = "20px Ariel";
+        ctx.strokeText("INDIA",xtext + 650,ytext + 30);
         ctx.font = "20px Ariel";
         ctx.strokeText("Score: "+score,xtext + 1000,ytext + 30);
     ctx.drawImage(info, xbox, ybox-130, 50 ,50);
@@ -966,6 +972,8 @@ function update(){
             ctx.drawImage(eritrea, 0, 0, width,height);
             ctx.fillStyle = "black";
             ctx.beginPath();
+        ctx.font = "20px Ariel";
+        ctx.strokeText("ERITREA",xtext + 650,ytext + 30);
          ctx.stroke();
         ctx.font = "20px Ariel";
         ctx.strokeText("Score: "+score,xtext + 1000,ytext + 30);
@@ -1042,6 +1050,7 @@ function update(){
         }
             if (hitFlag5){
                 ctx.clearRect(0,0,width,height);
+                score = 0;
                 update();
             }
 
@@ -1049,7 +1058,11 @@ function update(){
 
 
     }
-
+ if (hitFlag5){
+        ctx.clearRect(0,0,width,height);
+        score = 0;
+        update();
+            }
 
 
 
