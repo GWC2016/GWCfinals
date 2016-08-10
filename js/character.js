@@ -49,6 +49,12 @@ india.src = "Countries/india.jpg";
 india.onload = function() {
         setInterval(loop, 1000 / 30);
     }
+eritrea = new Image();
+eritrea.src = "Countries/eritrea.jpg";
+
+eritrea.onload = function() {
+        setInterval(loop, 1000 / 30);
+    }
 run = new Image();
 run.src = "girl.running.png";
 
@@ -103,6 +109,8 @@ var boxes2 = [];
 var blocks2=[];
 var boxes3 =[];
 var blocks3 = [];
+var boxes4 = [];
+var blocks4 = [];
 var fact1 = false;
 var fact2 = false;
 var fact3 = false;
@@ -112,11 +120,17 @@ var fact6 = false;
 var fact7 = false;
 var fact8 = false;
 var fact9 = false;
+var fact10 = false;
+var fact11 = false;
+var fact12 = false;
 var hitFlag = false;
 var hitFlag2 = false;
+var hitFlag3 = false;
+var hitFlag4 = false;
 var flags = [];
 var flags2 = [];
 var flags3 = [];
+var flags4 = [];
 var score = 0;
 // dimensions
 boxes.push({
@@ -209,9 +223,8 @@ flags2.push({
     width: 50,
     height: 50
 });
-
 flags3.push({
-    x: 3700,
+    x: 3730,
     y: ybox,
     width: 50,
     height: 50
@@ -261,6 +274,48 @@ boxes3.push({
 boxes3.push({
     x: 3200,
     y: ybox-130,
+    width: 50,
+    height: 50
+});
+boxes4.push({
+    x: 3930,
+    y: ybox,
+    width: 50,
+    height: 50
+});
+boxes4.push({
+    x: 4430,
+    y: ybox-130,
+    width: 50,
+    height: 50
+});
+boxes4.push({
+    x: 4630,
+    y: ybox-130,
+    width: 50,
+    height: 50
+});
+blocks4.push({
+    x: 4320,
+    y: ybox,
+    width: 50,
+    height: 50
+});
+blocks4.push({
+    x: 4370,
+    y: ybox,
+    width: 50,
+    height: 50
+});
+blocks4.push({
+    x: 4370,
+    y: ybox-50,
+    width: 50,
+    height: 50
+});
+flags4.push({
+    x: 4000,
+    y: ybox,
     width: 50,
     height: 50
 });
@@ -441,7 +496,7 @@ function update(){
         }
 
     }
-        for (var i = 0; i < boxes3.length; i++) {
+    for (var i = 0; i < boxes3.length; i++) {
         ctx.rect(boxes3[i].x, boxes3[i].y, boxes3[i].width, boxes3[i].height);
 
         var dir = colCheck(player, boxes3[2]);
@@ -453,6 +508,60 @@ function update(){
             player.grounded = true;
             player.jumping = false;
             fact9= true;
+            score += 1
+        } else if (dir === "t") {
+            player.velY *= -1;
+        }
+
+    }
+    for (var i = 0; i < boxes4.length; i++) {
+        ctx.rect(boxes4[i].x, boxes4[i].y, boxes4[i].width, boxes4[i].height);
+
+        var dir = colCheck(player, boxes4[0]);
+
+        if (dir === "l" || dir === "r") {
+            player.velX = 0;
+            player.jumping = false;
+        } else if (dir === "b") {
+            player.grounded = true;
+            player.jumping = false;
+            fact10= true;
+            score += 1
+        } else if (dir === "t") {
+            player.velY *= -1;
+        }
+
+    }
+    for (var i = 0; i < boxes4.length; i++) {
+        ctx.rect(boxes4[i].x, boxes4[i].y, boxes4[i].width, boxes4[i].height);
+
+        var dir = colCheck(player, boxes4[1]);
+
+        if (dir === "l" || dir === "r") {
+            player.velX = 0;
+            player.jumping = false;
+        } else if (dir === "b") {
+            player.grounded = true;
+            player.jumping = false;
+            fact11= true;
+            score += 1
+        } else if (dir === "t") {
+            player.velY *= -1;
+        }
+
+    }
+    for (var i = 0; i < boxes4.length; i++) {
+        ctx.rect(boxes4[i].x, boxes4[i].y, boxes4[i].width, boxes4[i].height);
+
+        var dir = colCheck(player, boxes4[2]);
+
+        if (dir === "l" || dir === "r") {
+            player.velX = 0;
+            player.jumping = false;
+        } else if (dir === "b") {
+            player.grounded = true;
+            player.jumping = false;
+            fact12= true;
             score += 1
         } else if (dir === "t") {
             player.velY *= -1;
@@ -508,6 +617,23 @@ function update(){
         }
 
     }
+
+        for (var i = 0; i < blocks4.length; i++) {
+        ctx.rect(blocks4[i].x, blocks4[i].y, blocks4[i].width, blocks4[i].height);
+
+        var dir = colCheck(player, blocks4[i]);
+
+        if (dir === "l" || dir === "r") {
+            player.velX = 0;
+            player.jumping = false;
+        } else if (dir === "b") {
+            player.grounded = true;
+            player.jumping = false;
+        } else if (dir === "t") {
+            player.velY *= -1;
+        }
+
+    }
     for (var i = 0; i < flags.length; i++) {
         ctx.rect(flags[i].x, flags[i].y, flags[i].width, flags[i].height);
 
@@ -540,7 +666,7 @@ function update(){
             player.velY *= -1;
         }
     }
-        for (var i = 0; i < flags3.length; i++) {
+    for (var i = 0; i < flags3.length; i++) {
         ctx.rect(flags3[i].x, flags3[i].y, flags3[i].width, flags3[i].height);
 
         var dir = colCheck(player, flags3[i]);
@@ -548,7 +674,7 @@ function update(){
         if (dir === "l" || dir === "r") {
             player.velX = 0;
             player.jumping = false;
-            hitFlag2 = true;
+            hitFlag3 = true;
         } else if (dir === "b") {
             player.grounded = true;
             player.jumping = false;
@@ -736,7 +862,7 @@ function update(){
     ctx.drawImage(eritreanflag, 1300, ybox-60, 120 ,120);
 
 
-        if(fact7){
+    if(fact7){
         ctx.fillStyle = "white";
         ctx.fillRect(xtext,ytext,300,300);
         ctx.fill();
@@ -769,6 +895,69 @@ function update(){
         ctx.strokeText("should always wear a mask to keep", xtext + 15, ytext + 50);
         ctx.strokeText("the disease from spreading.", xtext + 15, ytext + 70);
     }
+    if (hitFlag3){
+
+
+            ctx.clearRect(0,0,width,height);
+            ctx.drawImage(eritrea, 0, 0, width,height);
+            ctx.fillStyle = "black";
+            ctx.beginPath();
+         ctx.stroke();
+        ctx.font = "20px Ariel";
+        ctx.strokeText("Score: "+score,xtext + 1000,ytext + 30);
+         ctx.drawImage(info, xbox, ybox-130, 50 ,50);
+        ctx.drawImage(info, xbox+200, ybox-130, 50 ,50);
+        ctx.drawImage(info, xbox-500, ybox, 50 ,50);
+        ctx.drawImage(block, xbox-60, ybox, 50 ,50);
+        ctx.drawImage(block, xbox-100, ybox, 50 ,50);
+        ctx.drawImage(block, xbox-60, ybox-50, 50 ,50);
+        ctx.drawImage(block, xbox-80, ybox, 50 ,50);
+        ctx.drawImage(block, 100, ybox, 50 ,50);
+
+        //ctx.drawImage(japan, player.x+25, player.y-60, 100,100);
+        ctx.drawImage(grass, u, canvas.height-40, canvas.width, 50);
+        ctx.fillStyle = "#8B4513";
+        ctx.fillRect(u,canvas.height-30,canvas.width*3,100);
+        ctx.drawImage(image, player.x-1200,player.y-25, player.width, player.height);
+        ctx.drawImage(eritreanflag, 1300, ybox-60, 120 ,120);
+        ctx.drawImage(image, player.x-3625,player.y-25, player.width, player.height);
+        if(fact10){
+            ctx.fillStyle = "white";
+            ctx.fillRect(xtext,ytext,300,300);
+            ctx.fill();
+            ctx.stroke();
+            ctx.font = "15px Ariel";
+
+            ctx.strokeText("In Japanese buildings if the floor",xtext + 10,ytext + 30);
+            ctx.strokeText("is raised it helps show where you", xtext + 15, ytext + 50);
+            ctx.strokeText("should take off your shoes.", xtext + 15, ytext + 70);
+    }
+        if(fact11){
+            ctx.fillStyle = "white";
+            ctx.fillRect(xtext,ytext,300,300);
+            ctx.fill();
+            ctx.stroke();
+            ctx.font = "15px Ariel";
+
+            ctx.strokeText("In Japanese buildings if the floor",xtext + 10,ytext + 30);
+            ctx.strokeText("is raised it helps show where you", xtext + 15, ytext + 50);
+            ctx.strokeText("should take off your shoes.", xtext + 15, ytext + 70);
+        }
+          if(fact12){
+            ctx.fillStyle = "white";
+            ctx.fillRect(xtext,ytext,300,300);
+            ctx.fill();
+            ctx.stroke();
+            ctx.font = "15px Ariel";
+
+            ctx.strokeText("If you become sick in Japan you",xtext + 10,ytext + 30);
+            ctx.strokeText("should always wear a mask to keep", xtext + 15, ytext + 50);
+            ctx.strokeText("the disease from spreading.", xtext + 15, ytext + 70);
+        }
+
+        }
+
+
 
 
     }
