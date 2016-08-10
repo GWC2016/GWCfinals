@@ -13,6 +13,12 @@ image.src = "js/girl.png";
 image.onload = function() {
         setInterval(loop, 1000 / 30);
     }
+world = new Image();
+world.src = "world.jpg";
+
+world.onload = function() {
+        setInterval(loop, 1000 / 30);
+    }
 japanflag = new Image();
 japanflag.src = "flags/japan.png";
 
@@ -41,6 +47,12 @@ endflag = new Image();
 endflag.src = "flags/endflag.png";
 
 endflag.onload = function() {
+        setInterval(loop, 1000 / 30);
+    }
+startflag = new Image();
+startflag.src = "flags/greenflag.png";
+
+startflag.onload = function() {
         setInterval(loop, 1000 / 30);
     }
 brazil = new Image();
@@ -133,10 +145,12 @@ var hitFlag = false;
 var hitFlag2 = false;
 var hitFlag3 = false;
 var hitFlag4 = false;
+var hitFlag5 = false;
 var flags = [];
 var flags2 = [];
 var flags3 = [];
 var flags4 = [];
+var flags5 = [];
 var score = 0;
 // dimensions
 boxes.push({
@@ -320,7 +334,13 @@ blocks4.push({
     height: 50
 });
 flags4.push({
-    x: 4000,
+    x: 4900,
+    y: ybox,
+    width: 50,
+    height: 50
+});
+flags5.push({
+    x: 4900,
     y: ybox,
     width: 50,
     height: 50
@@ -688,6 +708,38 @@ function update(){
             player.velY *= -1;
         }
     }
+      for (var i = 0; i < flags4.length; i++) {
+        ctx.rect(flags4[i].x, flags4[i].y, flags4[i].width, flags4[i].height);
+
+        var dir = colCheck(player, flags4[i]);
+
+        if (dir === "l" || dir === "r") {
+            player.velX = 0;
+            player.jumping = false;
+            hitFlag4 = true;
+        } else if (dir === "b") {
+            player.grounded = true;
+            player.jumping = false;
+        } else if (dir === "t") {
+            player.velY *= -1;
+        }
+    }
+    for (var i = 0; i < flags5.length; i++) {
+        ctx.rect(flags5[i].x, flags5[i].y, flags5[i].width, flags5[i].height);
+
+        var dir = colCheck(player, flags5[i]);
+
+        if (dir === "l" || dir === "r") {
+            player.velX = 0;
+            player.jumping = false;
+            hitFlag5 = true;
+        } else if (dir === "b") {
+            player.grounded = true;
+            player.jumping = false;
+        } else if (dir === "t") {
+            player.velY *= -1;
+        }
+    }
 
     if(player.grounded){
          player.velY = 0;
@@ -883,7 +935,7 @@ function update(){
         ctx.strokeText("common to spread a loved one’s ashes", xtext + 15, ytext + 130);
         ctx.strokeText("in the river.", xtext + 15, ytext + 150);
     }
-    if(fact8){
+    if(fact9){
         ctx.fillStyle = "white";
         ctx.fillRect(xtext,ytext,300,300);
         ctx.fill();
@@ -896,7 +948,7 @@ function update(){
          ctx.strokeText("green for faith. The spinning wheel", xtext + 15, ytext + 90);
          ctx.strokeText("represents the wheel of life.", xtext + 15, ytext + 110);
     }
-      if(fact9){
+      if(fact8){
         ctx.fillStyle = "white";
         ctx.fillRect(xtext,ytext,300,300);
         ctx.fill();
@@ -931,7 +983,7 @@ function update(){
         ctx.fillStyle = "#8B4513";
         ctx.fillRect(u,canvas.height-30,canvas.width*3,100);
         ctx.drawImage(image, player.x-1200,player.y-25, player.width, player.height);
-        ctx.drawImage(eritreanflag, 1300, ybox-60, 120 ,120);
+        ctx.drawImage(endflag, 1300, ybox-60, 120 ,120);
         ctx.drawImage(image, player.x-3625,player.y-25, player.width, player.height);
         if(fact10){
             ctx.fillStyle = "white";
@@ -970,6 +1022,28 @@ function update(){
         }
 
         }
+            if (hitFlag4){
+                ctx.clearRect(0,0,width,height);
+                ctx.drawImage(world, 0, 0, width,height);
+                ctx.fillStyle = "white";
+                ctx.fillRect(xtext,ytext,300,200);
+                ctx.fill();
+                ctx.stroke();
+                ctx.font = "30px Ariel";
+                ctx.strokeText("Your Score: "+score,xtext +15,ytext +60);
+                ctx.strokeText("Move to the flag",xtext +15,ytext +100);
+                ctx.strokeText("to restart",xtext +15,ytext +130);
+                 ctx.drawImage(grass, u, canvas.height-40, canvas.width, 50);
+                ctx.fillStyle = "#8B4513";
+                ctx.fillRect(u,canvas.height-30,canvas.width*3,100);
+                ctx.drawImage(startflag, 1300, ybox-60, 120 ,120);
+                ctx.drawImage(image, player.x-1000,player.y-25, player.width, player.height);
+
+        }
+            if (hitFlag5){
+                ctx.clearRect(0,0,width,height);
+                update();
+            }
 
 
 
