@@ -1022,7 +1022,7 @@ function update(){
             ctx.fillRect(xtext,ytext,300,300);
             ctx.fill();
             ctx.stroke();
-            ctx.font = "15px Ariel";
+            ctx.font = "16px Ariel";
 
             ctx.strokeText("Eritrea's nine ethnic groups have different",xtext + 10,ytext + 30);
             ctx.strokeText("music and dance styles. The most common", xtext + 15, ytext + 50);
