@@ -1051,7 +1051,7 @@ function update(){
                 ctx.fillRect(u,canvas.height-30,canvas.width*3,100);
                 ctx.drawImage(info, xbox+200, ybox-130, 50 ,50);
                 ctx.drawImage(startflag, 1300, ybox-60, 120 ,120);
-                ctx.drawImage(image, player.x-1000,player.y-25, player.width, player.height);
+                ctx.drawImage(image, player.x-4500,player.y-25, player.width, player.height);
 
         }
             if (hitFlag5){
