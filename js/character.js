@@ -672,6 +672,7 @@ function update(){
         } else if (dir === "b") {
             player.grounded = true;
             player.jumping = false;
+            hitFlag = true;
         } else if (dir === "t") {
             player.velY *= -1;
         }
@@ -688,6 +689,7 @@ function update(){
         } else if (dir === "b") {
             player.grounded = true;
             player.jumping = false;
+            hitFlag2 = true;
         } else if (dir === "t") {
             player.velY *= -1;
         }
@@ -704,6 +706,7 @@ function update(){
         } else if (dir === "b") {
             player.grounded = true;
             player.jumping = false;
+            hitFlag3 = true;
         } else if (dir === "t") {
             player.velY *= -1;
         }
@@ -720,6 +723,7 @@ function update(){
         } else if (dir === "b") {
             player.grounded = true;
             player.jumping = false;
+            hitFlag4 = true;
         } else if (dir === "t") {
             player.velY *= -1;
         }
@@ -736,6 +740,7 @@ function update(){
         } else if (dir === "b") {
             player.grounded = true;
             player.jumping = false;
+            hitFlag5 = true;
         } else if (dir === "t") {
             player.velY *= -1;
         }
@@ -1044,6 +1049,7 @@ function update(){
                  ctx.drawImage(grass, u, canvas.height-40, canvas.width, 50);
                 ctx.fillStyle = "#8B4513";
                 ctx.fillRect(u,canvas.height-30,canvas.width*3,100);
+                ctx.drawImage(info, xbox+200, ybox-130, 50 ,50);
                 ctx.drawImage(startflag, 1300, ybox-60, 120 ,120);
                 ctx.drawImage(image, player.x-1000,player.y-25, player.width, player.height);
 
