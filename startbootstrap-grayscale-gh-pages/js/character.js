@@ -849,11 +849,11 @@ function update(){
     ctx.drawImage(brazil, 0, 0, width,height);
     ctx.fillStyle = "black";
     ctx.beginPath();
-         ctx.stroke();
+         ctx.fill();
         ctx.font = "20px Arial";
-        ctx.strokeText("BRAZIL",xtext + 650,ytext + 30);
+        ctx.fillText("BRAZIL",xtext + 650,ytext + 30);
         ctx.font = "20px Arial";
-        ctx.strokeText("Score: "+score,xtext + 1000,ytext + 30);
+        ctx.fillText("Score: "+score,xtext + 1000,ytext + 30);
 
     ctx.drawImage(info, xbox-650, ybox, 50 ,50);
     ctx.drawImage(info, xbox+200, ybox-150, 50 ,50);
@@ -913,11 +913,11 @@ function update(){
     ctx.drawImage(india, 0, 0, width,height);
     ctx.fillStyle = "black";
     ctx.beginPath();
-         ctx.stroke();
+         ctx.fill();
         ctx.font = "20px Arial";
-        ctx.strokeText("INDIA",xtext + 650,ytext + 30);
+        ctx.fillText("INDIA",xtext + 650,ytext + 30);
         ctx.font = "20px Arial";
-        ctx.strokeText("Score: "+score,xtext + 1000,ytext + 30);
+        ctx.fillText("Score: "+score,xtext + 1000,ytext + 30);
     ctx.drawImage(info, xbox, ybox-130, 50 ,50);
     ctx.drawImage(info, xbox+200, ybox-130, 50 ,50);
     ctx.drawImage(info, 550, ybox-130, 50 ,50);
@@ -984,10 +984,10 @@ function update(){
             ctx.fillStyle = "black";
             ctx.beginPath();
         ctx.font = "20px Arial";
-        ctx.strokeText("ERITREA",xtext + 650,ytext + 30);
-         ctx.stroke();
+        ctx.fillText("ERITREA",xtext + 650,ytext + 30);
+         ctx.fill();
         ctx.font = "20px Arial";
-        ctx.strokeText("Score: "+score,xtext + 1000,ytext + 30);
+        ctx.fillText("Score: "+score,xtext + 1000,ytext + 30);
          ctx.drawImage(info, xbox, ybox-130, 50 ,50);
         ctx.drawImage(info, xbox+200, ybox-130, 50 ,50);
         ctx.drawImage(info, xbox-500, ybox, 50 ,50);
