@@ -1053,7 +1053,12 @@ function update(){
                 ctx.drawImage(startflag, 1300, ybox-60, 120 ,120);
                 ctx.drawImage(image, player.x-4500,player.y-25, player.width, player.height);
 
+
         }
+        if (hitFlag5){
+
+        location.reload(true);
+            }
 
 
 
