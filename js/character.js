@@ -37,6 +37,12 @@ eritreanflag.src = "flags/eritreanflag.png";
 eritreanflag.onload = function() {
         setInterval(loop, 1000 / 30);
     }
+endflag = new Image();
+endflag.src = "flags/endflag.png";
+
+endflag.onload = function() {
+        setInterval(loop, 1000 / 30);
+    }
 brazil = new Image();
 brazil.src = "Countries/brazil.jpg";
 
@@ -340,12 +346,12 @@ function update(){
             player.velX++;
             }
         }
-    if (keys[37]) {
-            // left arrow
-        if (player.velX > -player.speed) {
-            player.velX--;
-            }
-        }
+//    if (keys[37]) {
+//            // left arrow
+//        if (player.velX > -player.speed) {
+//            player.velX--;
+//            }
+//        }
 
     player.velX *= friction;
     player.velY += gravity;
@@ -805,31 +811,31 @@ function update(){
         ctx.stroke();
         ctx.font = "15px Ariel";
 
-        ctx.strokeText("In Japanese buildings if the floor",xtext + 10,ytext + 30);
-        ctx.strokeText("is raised it helps show where you", xtext + 15, ytext + 50);
-        ctx.strokeText("should take off your shoes.", xtext + 15, ytext + 70);
+        ctx.strokeText("Brazil is famous for the world’s biggest",xtext + 10,ytext + 30);
+        ctx.strokeText("carnival every year in February. It includes", xtext + 15, ytext + 50);
+        ctx.strokeText("music, dancing, and food.", xtext + 15, ytext + 70);
     }
-    if(fact5){
+    if(fact6){
         ctx.fillStyle = "white";
         ctx.fillRect(xtext,ytext,300,300);
         ctx.fill();
         ctx.stroke();
         ctx.font = "15px Ariel";
 
-        ctx.strokeText("In Japanese buildings if the floor",xtext + 10,ytext + 30);
-        ctx.strokeText("is raised it helps show where you", xtext + 15, ytext + 50);
-        ctx.strokeText("should take off your shoes.", xtext + 15, ytext + 70);
+        ctx.strokeText("The music played at the carnivals is samba.",xtext + 10,ytext + 30);
+        ctx.strokeText(" It came from African slaves in the 17th,", xtext + 15, ytext + 50);
+        ctx.strokeText("18th, and 19th century.", xtext + 15, ytext + 70);
     }
-      if(fact6){
+      if(fact5){
         ctx.fillStyle = "white";
         ctx.fillRect(xtext,ytext,300,300);
         ctx.fill();
         ctx.stroke();
         ctx.font = "15px Ariel";
 
-        ctx.strokeText("If you become sick in Japan you",xtext + 10,ytext + 30);
-        ctx.strokeText("should always wear a mask to keep", xtext + 15, ytext + 50);
-        ctx.strokeText("the disease from spreading.", xtext + 15, ytext + 70);
+        ctx.strokeText("Soccer is the most popular sport in Brazil",xtext + 10,ytext + 30);
+        ctx.strokeText(" The national team has won the most World", xtext + 15, ytext + 50);
+        ctx.strokeText("Cups (5).", xtext + 15, ytext + 70);
     }
 
     }
@@ -869,9 +875,13 @@ function update(){
         ctx.stroke();
         ctx.font = "15px Ariel";
 
-        ctx.strokeText("In Japanese buildings if the floor",xtext + 10,ytext + 30);
-        ctx.strokeText("is raised it helps show where you", xtext + 15, ytext + 50);
-        ctx.strokeText("should take off your shoes.", xtext + 15, ytext + 70);
+        ctx.strokeText("Rivers are very important to India’s",xtext + 10,ytext + 30);
+        ctx.strokeText("culture and they have worshiped the rivers", xtext + 15, ytext + 50);
+        ctx.strokeText("as goddesses because of the water they bring", xtext + 15, ytext + 70);
+        ctx.strokeText(" to dry land. Bathing in the rivers is said", xtext + 15, ytext + 90);
+        ctx.strokeText("to wash a person of their sins, and it is", xtext + 15, ytext + 110);
+        ctx.strokeText("common to spread a loved one’s ashes", xtext + 15, ytext + 130);
+        ctx.strokeText("in the river.", xtext + 15, ytext + 150);
     }
     if(fact8){
         ctx.fillStyle = "white";
@@ -880,9 +890,11 @@ function update(){
         ctx.stroke();
         ctx.font = "15px Ariel";
 
-        ctx.strokeText("In Japanese buildings if the floor",xtext + 10,ytext + 30);
-        ctx.strokeText("is raised it helps show where you", xtext + 15, ytext + 50);
-        ctx.strokeText("should take off your shoes.", xtext + 15, ytext + 70);
+        ctx.strokeText("The national flag has three stripes.",xtext + 10,ytext + 30);
+        ctx.strokeText("The saffron side stands for courage,", xtext + 15, ytext + 50);
+        ctx.strokeText("the white for honesty and peace, and", xtext + 15, ytext + 70);
+         ctx.strokeText("green for faith. The spinning wheel", xtext + 15, ytext + 90);
+         ctx.strokeText("represents the wheel of life.", xtext + 15, ytext + 110);
     }
       if(fact9){
         ctx.fillStyle = "white";
@@ -891,9 +903,9 @@ function update(){
         ctx.stroke();
         ctx.font = "15px Ariel";
 
-        ctx.strokeText("If you become sick in Japan you",xtext + 10,ytext + 30);
-        ctx.strokeText("should always wear a mask to keep", xtext + 15, ytext + 50);
-        ctx.strokeText("the disease from spreading.", xtext + 15, ytext + 70);
+        ctx.strokeText("The national fruit is mango.",xtext + 10,ytext + 30);
+        ctx.strokeText("The national bird, which was bred", xtext + 15, ytext + 50);
+        ctx.strokeText("for food, is a peacock.", xtext + 15, ytext + 70);
     }
     if (hitFlag3){
 
@@ -928,9 +940,11 @@ function update(){
             ctx.stroke();
             ctx.font = "15px Ariel";
 
-            ctx.strokeText("In Japanese buildings if the floor",xtext + 10,ytext + 30);
-            ctx.strokeText("is raised it helps show where you", xtext + 15, ytext + 50);
-            ctx.strokeText("should take off your shoes.", xtext + 15, ytext + 70);
+            ctx.strokeText("One of the most common parts of",xtext + 10,ytext + 30);
+            ctx.strokeText("culture in Eritrea is the coffee ceremony.", xtext + 15, ytext + 50);
+            ctx.strokeText("Coffee is served as almost any event, such", xtext + 15, ytext + 70);
+            ctx.strokeText("as visiting friends or family, festivities, or", xtext + 15, ytext + 90);
+            ctx.strokeText("a part of daily life.", xtext + 15, ytext + 110);
     }
         if(fact11){
             ctx.fillStyle = "white";
@@ -939,9 +953,9 @@ function update(){
             ctx.stroke();
             ctx.font = "15px Ariel";
 
-            ctx.strokeText("In Japanese buildings if the floor",xtext + 10,ytext + 30);
-            ctx.strokeText("is raised it helps show where you", xtext + 15, ytext + 50);
-            ctx.strokeText("should take off your shoes.", xtext + 15, ytext + 70);
+            ctx.strokeText("Eritrea's nine ethnic groups have different",xtext + 10,ytext + 30);
+            ctx.strokeText("music and dance styles. The most common", xtext + 15, ytext + 50);
+            ctx.strokeText("instrument used is the drums.", xtext + 15, ytext + 70);
         }
           if(fact12){
             ctx.fillStyle = "white";
@@ -950,9 +964,9 @@ function update(){
             ctx.stroke();
             ctx.font = "15px Ariel";
 
-            ctx.strokeText("If you become sick in Japan you",xtext + 10,ytext + 30);
-            ctx.strokeText("should always wear a mask to keep", xtext + 15, ytext + 50);
-            ctx.strokeText("the disease from spreading.", xtext + 15, ytext + 70);
+            ctx.strokeText("Eritrean food has many types of stews, which",xtext + 10,ytext + 30);
+            ctx.strokeText("are called tsebhi. They are made from vegetables", xtext + 15, ytext + 50);
+            ctx.strokeText("and meat and is served with a flatbread called injera.", xtext + 15, ytext + 70);
         }
 
         }
