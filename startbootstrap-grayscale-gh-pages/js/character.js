@@ -775,9 +775,9 @@ function update(){
     ctx.fillStyle = "black";
     ctx.beginPath();
      ctx.stroke();
-        ctx.font = "20px Ariel";
+        ctx.font = "20px Arial";
         ctx.strokeText("JAPAN",xtext + 650,ytext + 30);
-        ctx.font = "20px Ariel";
+        ctx.font = "20px Arial";
         ctx.strokeText("Score: "+score,xtext + 1000,ytext + 30);
     ctx.drawImage(info, xbox, ybox-130, 50 ,50);
     ctx.drawImage(info, xbox+200, ybox-130, 50 ,50);
@@ -799,7 +799,7 @@ function update(){
         ctx.fillRect(xtext,ytext,300,300);
         ctx.fill();
         ctx.stroke();
-        ctx.font = "15px Ariel";
+        ctx.font = "15px Arial";
 
         ctx.strokeText("Japan’s national sport is sumo.",xtext + 10,ytext + 30);
         ctx.strokeText("Going back to the 8th century,", xtext + 10, ytext + 50);
@@ -821,7 +821,7 @@ function update(){
         ctx.fillRect(xtext,ytext,300,300);
         ctx.fill();
         ctx.stroke();
-        ctx.font = "15px Ariel";
+        ctx.font = "15px Arial";
 
         ctx.strokeText("In Japanese buildings if the floor",xtext + 10,ytext + 30);
         ctx.strokeText("is raised it helps show where you", xtext + 15, ytext + 50);
@@ -832,7 +832,7 @@ function update(){
         ctx.fillRect(xtext,ytext,300,300);
         ctx.fill();
         ctx.stroke();
-        ctx.font = "15px Ariel";
+        ctx.font = "15px Arial";
 
         ctx.strokeText("If you become sick in Japan you",xtext + 10,ytext + 30);
         ctx.strokeText("should always wear a mask to keep", xtext + 15, ytext + 50);
@@ -850,9 +850,9 @@ function update(){
     ctx.fillStyle = "black";
     ctx.beginPath();
          ctx.stroke();
-        ctx.font = "20px Ariel";
+        ctx.font = "20px Arial";
         ctx.strokeText("BRAZIL",xtext + 650,ytext + 30);
-        ctx.font = "20px Ariel";
+        ctx.font = "20px Arial";
         ctx.strokeText("Score: "+score,xtext + 1000,ytext + 30);
 
     ctx.drawImage(info, xbox-650, ybox, 50 ,50);
@@ -876,7 +876,7 @@ function update(){
         ctx.fillRect(xtext,ytext,300,300);
         ctx.fill();
         ctx.stroke();
-        ctx.font = "15px Ariel";
+        ctx.font = "15px Arial";
 
         ctx.strokeText("Brazil is famous for the world’s biggest",xtext + 10,ytext + 30);
         ctx.strokeText("carnival every year in February. It includes", xtext + 15, ytext + 50);
@@ -887,7 +887,7 @@ function update(){
         ctx.fillRect(xtext,ytext,300,300);
         ctx.fill();
         ctx.stroke();
-        ctx.font = "15px Ariel";
+        ctx.font = "15px Arial";
 
         ctx.strokeText("The music played at the carnivals is samba.",xtext + 10,ytext + 30);
         ctx.strokeText(" It came from African slaves in the 17th,", xtext + 15, ytext + 50);
@@ -898,7 +898,7 @@ function update(){
         ctx.fillRect(xtext,ytext,300,300);
         ctx.fill();
         ctx.stroke();
-        ctx.font = "15px Ariel";
+        ctx.font = "15px Arial";
 
         ctx.strokeText("Soccer is the most popular sport in Brazil",xtext + 10,ytext + 30);
         ctx.strokeText(" The national team has won the most World", xtext + 15, ytext + 50);
@@ -914,9 +914,9 @@ function update(){
     ctx.fillStyle = "black";
     ctx.beginPath();
          ctx.stroke();
-        ctx.font = "20px Ariel";
+        ctx.font = "20px Arial";
         ctx.strokeText("INDIA",xtext + 650,ytext + 30);
-        ctx.font = "20px Ariel";
+        ctx.font = "20px Arial";
         ctx.strokeText("Score: "+score,xtext + 1000,ytext + 30);
     ctx.drawImage(info, xbox, ybox-130, 50 ,50);
     ctx.drawImage(info, xbox+200, ybox-130, 50 ,50);
@@ -942,7 +942,7 @@ function update(){
         ctx.fillRect(xtext,ytext,300,300);
         ctx.fill();
         ctx.stroke();
-        ctx.font = "15px Ariel";
+        ctx.font = "15px Arial";
 
         ctx.strokeText("Rivers are very important to India’s",xtext + 10,ytext + 30);
         ctx.strokeText("culture and they have worshiped the rivers", xtext + 15, ytext + 50);
@@ -957,7 +957,7 @@ function update(){
         ctx.fillRect(xtext,ytext,300,300);
         ctx.fill();
         ctx.stroke();
-        ctx.font = "15px Ariel";
+        ctx.font = "15px Arial";
 
         ctx.strokeText("The national flag has three stripes.",xtext + 10,ytext + 30);
         ctx.strokeText("The saffron side stands for courage,", xtext + 15, ytext + 50);
@@ -970,7 +970,7 @@ function update(){
         ctx.fillRect(xtext,ytext,300,300);
         ctx.fill();
         ctx.stroke();
-        ctx.font = "15px Ariel";
+        ctx.font = "15px Arial";
 
         ctx.strokeText("The national fruit is mango.",xtext + 10,ytext + 30);
         ctx.strokeText("The national bird, which was bred", xtext + 15, ytext + 50);
@@ -983,10 +983,10 @@ function update(){
             ctx.drawImage(eritrea, 0, 0, width,height);
             ctx.fillStyle = "black";
             ctx.beginPath();
-        ctx.font = "20px Ariel";
+        ctx.font = "20px Arial";
         ctx.strokeText("ERITREA",xtext + 650,ytext + 30);
          ctx.stroke();
-        ctx.font = "20px Ariel";
+        ctx.font = "20px Arial";
         ctx.strokeText("Score: "+score,xtext + 1000,ytext + 30);
          ctx.drawImage(info, xbox, ybox-130, 50 ,50);
         ctx.drawImage(info, xbox+200, ybox-130, 50 ,50);
@@ -1009,7 +1009,7 @@ function update(){
             ctx.fillRect(xtext,ytext,300,300);
             ctx.fill();
             ctx.stroke();
-            ctx.font = "15px Ariel";
+            ctx.font = "15px Arial";
 
             ctx.strokeText("One of the most common parts of",xtext + 10,ytext + 30);
             ctx.strokeText("culture in Eritrea is the coffee ceremony.", xtext + 15, ytext + 50);
@@ -1022,7 +1022,7 @@ function update(){
             ctx.fillRect(xtext,ytext,300,300);
             ctx.fill();
             ctx.stroke();
-            ctx.font = "16px Ariel";
+            ctx.font = "16px Arial";
 
             ctx.strokeText("Eritrea's nine ethnic groups have different",xtext + 10,ytext + 30);
             ctx.strokeText("music and dance styles. The most common", xtext + 15, ytext + 50);
@@ -1033,7 +1033,7 @@ function update(){
             ctx.fillRect(xtext,ytext,300,300);
             ctx.fill();
             ctx.stroke();
-            ctx.font = "15px Ariel";
+            ctx.font = "15px Arial";
 
             ctx.strokeText("Eritrean food has many types of stews, which",xtext + 10,ytext + 30);
             ctx.strokeText("are called tsebhi. They are made from vegetables", xtext + 15, ytext + 50);
@@ -1048,7 +1048,7 @@ function update(){
                 ctx.fillRect(xtext,ytext,300,200);
                 ctx.fill();
                 ctx.stroke();
-                ctx.font = "30px Ariel";
+                ctx.font = "30px Arial";
                 ctx.strokeText("Your Score: "+score,xtext +15,ytext +60);
                 ctx.strokeText("Move to the flag",xtext +15,ytext +100);
                 ctx.strokeText("to restart",xtext +15,ytext +130);
