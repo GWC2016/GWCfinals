@@ -769,6 +769,10 @@ function update(){
         player.y = height - player.height;
         player.jumping = false;
     }
+    if(player.y <= 0){
+        player.y = 0;
+    }
+
 
     ctx.clearRect(0, 0, width, height);
     ctx.drawImage(japan, 0, 0, width,height);
