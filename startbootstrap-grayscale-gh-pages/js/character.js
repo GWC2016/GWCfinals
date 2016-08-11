@@ -874,7 +874,7 @@ function update(){
 
     if(fact4){
         ctx.fillStyle = "white";
-        ctx.fillRect(xtext,ytext,300,300);
+        ctx.fillRect(xtext,ytext,300,200);
         ctx.fill();
         ctx.fill();
         ctx.fillStyle = "black";
@@ -886,7 +886,7 @@ function update(){
     }
     if(fact6){
         ctx.fillStyle = "white";
-        ctx.fillRect(xtext,ytext,300,300);
+        ctx.fillRect(xtext,ytext,300,200);
         ctx.fill();
         ctx.fill();
         ctx.fillStyle = "black";
@@ -898,7 +898,7 @@ function update(){
     }
       if(fact5){
         ctx.fillStyle = "white";
-        ctx.fillRect(xtext,ytext,300,300);
+        ctx.fillRect(xtext,ytext,300,200);
         ctx.fill();
         ctx.fill();
         ctx.fillStyle = "black";
