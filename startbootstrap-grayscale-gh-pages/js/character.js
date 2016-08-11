@@ -795,7 +795,7 @@ function update(){
 
     if(fact1){
         ctx.fillStyle = "white";
-        ctx.fillRect(xtext,ytext,300,300);
+        ctx.fillRect(xtext,ytext,300,275);
         ctx.fill();
         ctx.fill();
         ctx.fillStyle = "black";
@@ -818,7 +818,7 @@ function update(){
     }
     if(fact2){
         ctx.fillStyle = "white";
-        ctx.fillRect(xtext,ytext,300,300);
+        ctx.fillRect(xtext,ytext,300,275);
         ctx.fill();
         ctx.fill();
         ctx.fillStyle = "black";
@@ -830,7 +830,7 @@ function update(){
     }
       if(fact3){
         ctx.fillStyle = "white";
-        ctx.fillRect(xtext,ytext,300,300);
+        ctx.fillRect(xtext,ytext,300,275);
         ctx.fill();
         ctx.fill();
         ctx.fillStyle = "black";
@@ -1010,7 +1010,7 @@ function update(){
         ctx.drawImage(image, player.x-3625,player.y-25, player.width, player.height);
         if(fact10){
             ctx.fillStyle = "white";
-            ctx.fillRect(xtext,ytext,300,300);
+            ctx.fillRect(xtext,ytext,300,200);
             ctx.fill();
             ctx.fill();
             ctx.fillStyle = "black";
@@ -1024,7 +1024,7 @@ function update(){
     }
         if(fact11){
             ctx.fillStyle = "white";
-            ctx.fillRect(xtext,ytext,300,300);
+            ctx.fillRect(xtext,ytext,300,200);
             ctx.fill();
             ctx.fill();
             ctx.fillStyle = "black";
@@ -1037,7 +1037,7 @@ function update(){
         }
           if(fact12){
             ctx.fillStyle = "white";
-            ctx.fillRect(xtext,ytext,300,300);
+            ctx.fillRect(xtext,ytext,300,200);
             ctx.fill();
             ctx.fill();
             ctx.fillStyle = "black";
