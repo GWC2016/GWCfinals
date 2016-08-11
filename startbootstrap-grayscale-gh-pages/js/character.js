@@ -372,12 +372,12 @@ function update(){
             player.velX++;
             }
         }
-//    if (keys[37]) {
-//            // left arrow
-//        if (player.velX > -player.speed) {
-//            player.velX--;
-//            }
-//        }
+    if (keys[37]) {
+            // left arrow
+        if (player.velX > -player.speed) {
+            player.velX--;
+            }
+        }
 
     player.velX *= friction;
     player.velY += gravity;
@@ -778,7 +778,6 @@ function update(){
         ctx.font = "20px Arial";
         ctx.fillText("JAPAN",xtext + 650,ytext + 30);
         ctx.font = "20px Arial";
-        ctx.fillText("Score: "+score,xtext + 1000,ytext + 30);
     ctx.drawImage(info, xbox, ybox-130, 50 ,50);
     ctx.drawImage(info, xbox+200, ybox-130, 50 ,50);
     ctx.drawImage(info, xbox-500, ybox, 50 ,50);
@@ -856,7 +855,6 @@ function update(){
         ctx.font = "20px Arial";
         ctx.fillText("BRAZIL",xtext + 650,ytext + 30);
         ctx.font = "20px Arial";
-        ctx.fillText("Score: "+score,xtext + 1000,ytext + 30);
 
     ctx.drawImage(info, xbox-650, ybox, 50 ,50);
     ctx.drawImage(info, xbox+200, ybox-150, 50 ,50);
@@ -923,7 +921,6 @@ function update(){
         ctx.font = "20px Arial";
         ctx.fillText("INDIA",xtext + 650,ytext + 30);
         ctx.font = "20px Arial";
-        ctx.fillText("Score: "+score,xtext + 1000,ytext + 30);
     ctx.drawImage(info, xbox, ybox-130, 50 ,50);
     ctx.drawImage(info, xbox+200, ybox-130, 50 ,50);
     ctx.drawImage(info, 550, ybox-130, 50 ,50);
@@ -995,7 +992,6 @@ function update(){
         ctx.fillText("ERITREA",xtext + 650,ytext + 30);
          ctx.fill();
         ctx.font = "20px Arial";
-        ctx.fillText("Score: "+score,xtext + 1000,ytext + 30);
          ctx.drawImage(info, xbox, ybox-130, 50 ,50);
         ctx.drawImage(info, xbox+200, ybox-130, 50 ,50);
         ctx.drawImage(info, xbox-500, ybox, 50 ,50);
@@ -1060,11 +1056,12 @@ function update(){
                 ctx.fillStyle = "white";
                 ctx.fillRect(xtext,ytext,300,200);
                 ctx.fill();
-                ctx.stroke();
+                ctx.fill();
+                ctx.fillStyle= "black";
                 ctx.font = "30px Arial";
-                ctx.strokeText("Your Score: "+score,xtext +15,ytext +60);
-                ctx.strokeText("Move to the flag",xtext +15,ytext +100);
-                ctx.strokeText("to restart",xtext +15,ytext +130);
+                ctx.fillText("Your Score: "+score,xtext +15,ytext +60);
+                ctx.fillText("Move to the flag",xtext +15,ytext +100);
+                ctx.fillText("to restart",xtext +15,ytext +130);
                  ctx.drawImage(grass, u, canvas.height-40, canvas.width, 50);
                 ctx.fillStyle = "#8B4513";
                 ctx.fillRect(u,canvas.height-30,canvas.width*3,100);
