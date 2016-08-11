@@ -798,21 +798,22 @@ function update(){
         ctx.fillStyle = "white";
         ctx.fillRect(xtext,ytext,300,300);
         ctx.fill();
-        ctx.stroke();
+        ctx.fill();
+        ctx.fillStyle = "black";
         ctx.font = "15px Arial";
 
-        ctx.strokeText("Japan’s national sport is sumo.",xtext + 10,ytext + 30);
-        ctx.strokeText("Going back to the 8th century,", xtext + 10, ytext + 50);
-        ctx.strokeText("sumo started as a prayer to have a", xtext + 10, ytext + 70);
-        ctx.strokeText("good rice harvest, but then turned",xtext + 10,ytext + 90);
-        ctx.strokeText("into a public sport, where two men",xtext + 10,ytext + 110);
-        ctx.strokeText("fight in a ring. The only way to",xtext + 10,ytext + 130);
-        ctx.strokeText("win is when one player knocked the",xtext + 10,ytext + 150);
-        ctx.strokeText("other player out of the ring or if any",xtext + 10,ytext + 170);
-        ctx.strokeText("of his body part except his feet touched",xtext + 10,ytext + 190);
-        ctx.strokeText("the ground. Sumo is still a large",xtext + 10,ytext + 210);
-        ctx.strokeText("Japanese tradition which still has",xtext + 10,ytext + 230);
-        ctx.strokeText("ancient customs and dress.",xtext + 10,ytext + 250);
+        ctx.fillText("Japan’s national sport is sumo.",xtext + 10,ytext + 30);
+        ctx.fillText("Going back to the 8th century,", xtext + 10, ytext + 50);
+        ctx.fillText("sumo started as a prayer to have a", xtext + 10, ytext + 70);
+        ctx.fillText("good rice harvest, but then turned",xtext + 10,ytext + 90);
+        ctx.fillText("into a public sport, where two men",xtext + 10,ytext + 110);
+        ctx.fillText("fight in a ring. The only way to",xtext + 10,ytext + 130);
+        ctx.fillText("win is when one player knocked the",xtext + 10,ytext + 150);
+        ctx.fillText("other player out of the ring or if any",xtext + 10,ytext + 170);
+        ctx.fillText("of his body part except his feet touched",xtext + 10,ytext + 190);
+        ctx.fillText("the ground. Sumo is still a large",xtext + 10,ytext + 210);
+        ctx.fillText("Japanese tradition which still has",xtext + 10,ytext + 230);
+        ctx.fillText("ancient customs and dress.",xtext + 10,ytext + 250);
 
 
     }
@@ -820,23 +821,25 @@ function update(){
         ctx.fillStyle = "white";
         ctx.fillRect(xtext,ytext,300,300);
         ctx.fill();
-        ctx.stroke();
+        ctx.fill();
+        ctx.fillStyle = "black";
         ctx.font = "15px Arial";
 
-        ctx.strokeText("In Japanese buildings if the floor",xtext + 10,ytext + 30);
-        ctx.strokeText("is raised it helps show where you", xtext + 10, ytext + 50);
-        ctx.strokeText("should take off your shoes.", xtext + 10, ytext + 70);
+        ctx.fillText("In Japanese buildings if the floor",xtext + 10,ytext + 30);
+        ctx.fillText("is raised it helps show where you", xtext + 10, ytext + 50);
+        ctx.fillText("should take off your shoes.", xtext + 10, ytext + 70);
     }
       if(fact3){
         ctx.fillStyle = "white";
         ctx.fillRect(xtext,ytext,300,300);
         ctx.fill();
-        ctx.stroke();
+        ctx.fill();
+        ctx.fillStyle = "black";
         ctx.font = "15px Arial";
 
-        ctx.strokeText("If you become sick in Japan you",xtext + 10,ytext + 30);
-        ctx.strokeText("should always wear a mask to keep", xtext + 10, ytext + 50);
-        ctx.strokeText("the disease from spreading.", xtext + 10, ytext + 70);
+        ctx.fillText("If you become sick in Japan you",xtext + 10,ytext + 30);
+        ctx.fillText("should always wear a mask to keep", xtext + 10, ytext + 50);
+        ctx.fillText("the disease from spreading.", xtext + 10, ytext + 70);
     }
 
 
@@ -875,34 +878,37 @@ function update(){
         ctx.fillStyle = "white";
         ctx.fillRect(xtext,ytext,300,300);
         ctx.fill();
-        ctx.stroke();
+        ctx.fill();
+        ctx.fillStyle = "black";
         ctx.font = "15px Arial";
 
-        ctx.strokeText("Brazil is famous for the world’s biggest",xtext + 10,ytext + 30);
-        ctx.strokeText("carnival every year in February. It includes", xtext + 10, ytext + 50);
-        ctx.strokeText("music, dancing, and food.", xtext + 10, ytext + 70);
+        ctx.fillText("Brazil is famous for the world’s biggest",xtext + 10,ytext + 30);
+        ctx.fillText("carnival every year in February. It includes", xtext + 10, ytext + 50);
+        ctx.fillText("music, dancing, and food.", xtext + 10, ytext + 70);
     }
     if(fact6){
         ctx.fillStyle = "white";
         ctx.fillRect(xtext,ytext,300,300);
         ctx.fill();
-        ctx.stroke();
+        ctx.fill();
+        ctx.fillStyle = "black";
         ctx.font = "15px Arial";
 
-        ctx.strokeText("The music played at the carnivals is samba.",xtext + 10,ytext + 30);
-        ctx.strokeText(" It came from African slaves in the 17th,", xtext + 10, ytext + 50);
-        ctx.strokeText("18th, and 19th century.", xtext + 10, ytext + 70);
+        ctx.fillText("The music played at the carnivals is samba.",xtext + 10,ytext + 30);
+        ctx.fillText(" It came from African slaves in the 17th,", xtext + 10, ytext + 50);
+        ctx.fillText("18th, and 19th century.", xtext + 10, ytext + 70);
     }
       if(fact5){
         ctx.fillStyle = "white";
         ctx.fillRect(xtext,ytext,300,300);
         ctx.fill();
-        ctx.stroke();
+        ctx.fill();
+        ctx.fillStyle = "black";
         ctx.font = "15px Arial";
 
-        ctx.strokeText("Soccer is the most popular sport in Brazil",xtext + 10,ytext + 30);
-        ctx.strokeText(" The national team has won the most World", xtext + 10, ytext + 50);
-        ctx.strokeText("Cups (5).", xtext + 10, ytext + 70);
+        ctx.fillText("Soccer is the most popular sport in Brazil",xtext + 10,ytext + 30);
+        ctx.fillText("The national team has won the most World", xtext + 10, ytext + 50);
+        ctx.fillText("Cups (5).", xtext + 10, ytext + 70);
     }
 
     }
@@ -941,47 +947,49 @@ function update(){
         ctx.fillStyle = "white";
         ctx.fillRect(xtext,ytext,300,300);
         ctx.fill();
-        ctx.stroke();
+        ctx.fill();
+        ctx.fillStyle = "black";
         ctx.font = "15px Arial";
 
-        ctx.strokeText("Rivers are very important to India’s",xtext + 10,ytext + 30);
-        ctx.strokeText("culture and they have worshiped the rivers", xtext + 10, ytext + 50);
-        ctx.strokeText("as goddesses because of the water they", xtext + 10, ytext + 70);
-        ctx.strokeText("bring to dry land. Bathing in the rivers is", xtext + 10, ytext + 90);
-        ctx.strokeText("said to wash a person of their sins, and", xtext + 10, ytext + 110);
-        ctx.strokeText("it is common to spread a loved one’s", xtext + 10, ytext + 130);
-        ctx.strokeText("ashes in the river.", xtext + 10, ytext + 150);
+        ctx.fillText("Rivers are very important to India’s",xtext + 10,ytext + 30);
+        ctx.fillText("culture and they have worshiped the rivers", xtext + 10, ytext + 50);
+        ctx.fillText("as goddesses because of the water they", xtext + 10, ytext + 70);
+        ctx.fillText("bring to dry land. Bathing in the rivers is", xtext + 10, ytext + 90);
+        ctx.fillText("said to wash a person of their sins, and", xtext + 10, ytext + 110);
+        ctx.fillText("it is common to spread a loved one’s", xtext + 10, ytext + 130);
+        ctx.fillText("ashes in the river.", xtext + 10, ytext + 150);
     }
     if(fact9){
         ctx.fillStyle = "white";
         ctx.fillRect(xtext,ytext,300,300);
         ctx.fill();
-        ctx.stroke();
+        ctx.fill();
+        ctx.fillStyle = "black";
         ctx.font = "15px Arial";
 
-        ctx.strokeText("The national flag has three stripes.",xtext + 10,ytext + 30);
-        ctx.strokeText("The saffron side stands for courage,", xtext + 10, ytext + 50);
-        ctx.strokeText("the white for honesty and peace, and", xtext + 10, ytext + 70);
-         ctx.strokeText("green for faith. The spinning wheel", xtext + 10, ytext + 90);
-         ctx.strokeText("represents the wheel of life.", xtext + 10, ytext + 110);
+        ctx.fillText("The national flag has three stripes.",xtext + 10,ytext + 30);
+        ctx.fillText("The saffron side stands for courage,", xtext + 10, ytext + 50);
+        ctx.fillText("the white for honesty and peace, and", xtext + 10, ytext + 70);
+         ctx.fillText("green for faith. The spinning wheel", xtext + 10, ytext + 90);
+         ctx.fillText("represents the wheel of life.", xtext + 10, ytext + 110);
     }
       if(fact8){
         ctx.fillStyle = "white";
         ctx.fillRect(xtext,ytext,300,300);
         ctx.fill();
-        ctx.stroke();
+        ctx.fill();
+        ctx.fillStyle = "black";
         ctx.font = "15px Arial";
 
-        ctx.strokeText("The national fruit is mango.",xtext + 10,ytext + 30);
-        ctx.strokeText("The national bird, which was bred", xtext + 10, ytext + 50);
-        ctx.strokeText("for food, is a peacock.", xtext + 10, ytext + 70);
+        ctx.fillText("The national fruit is mango.",xtext + 10,ytext + 30);
+        ctx.fillText("The national bird, which was bred", xtext + 10, ytext + 50);
+        ctx.fillText("for food, is a peacock.", xtext + 10, ytext + 70);
     }
     if (hitFlag3){
 
 
             ctx.clearRect(0,0,width,height);
             ctx.drawImage(eritrea, 0, 0, width,height);
-            ctx.fillStyle = "black";
             ctx.beginPath();
         ctx.font = "20px Arial";
         ctx.fillText("ERITREA",xtext + 650,ytext + 30);
@@ -1008,38 +1016,41 @@ function update(){
             ctx.fillStyle = "white";
             ctx.fillRect(xtext,ytext,300,300);
             ctx.fill();
-            ctx.stroke();
+            ctx.fill();
+            ctx.fillStyle = "black";
             ctx.font = "15px Arial";
 
-            ctx.strokeText("One of the most common parts of",xtext + 10,ytext + 30);
-            ctx.strokeText("culture in Eritrea is the coffee ceremony.", xtext + 10, ytext + 50);
-            ctx.strokeText("Coffee is served as almost any event, such", xtext + 10, ytext + 70);
-            ctx.strokeText("as visiting friends or family, festivities, or", xtext + 10, ytext + 90);
-            ctx.strokeText("a part of daily life.", xtext + 10, ytext + 110);
+            ctx.fillText("One of the most common parts of",xtext + 10,ytext + 30);
+            ctx.fillText("culture in Eritrea is the coffee ceremony.", xtext + 10, ytext + 50);
+            ctx.fillText("Coffee is served as almost any event, such", xtext + 10, ytext + 70);
+            ctx.fillText("as visiting friends or family, festivities, or", xtext + 10, ytext + 90);
+            ctx.fillText("a part of daily life.", xtext + 10, ytext + 110);
     }
         if(fact11){
             ctx.fillStyle = "white";
             ctx.fillRect(xtext,ytext,300,300);
             ctx.fill();
-            ctx.stroke();
+            ctx.fill();
+            ctx.fillStyle = "black";
             ctx.font = "16px Arial";
 
-            ctx.strokeText("Eritrea's nine ethnic groups have",xtext + 10,ytext + 30);
-            ctx.strokeText("different music and dance styles. The", xtext + 10, ytext + 50);
-            ctx.strokeText("most common instrument used is", xtext + 10, ytext + 70);
-            ctx.strokeText("the drums.", xtext + 10, ytext + 90);
+            ctx.fillText("Eritrea's nine ethnic groups have",xtext + 10,ytext + 30);
+            ctx.fillText("different music and dance styles. The", xtext + 10, ytext + 50);
+            ctx.fillText("most common instrument used is", xtext + 10, ytext + 70);
+            ctx.fillText("the drums.", xtext + 10, ytext + 90);
         }
           if(fact12){
             ctx.fillStyle = "white";
             ctx.fillRect(xtext,ytext,300,300);
             ctx.fill();
-            ctx.stroke();
+            ctx.fill();
+            ctx.fillStyle = "black";
             ctx.font = "15px Arial";
 
-            ctx.strokeText("Eritrean food has many types of stews,",xtext + 10,ytext + 30);
-            ctx.strokeText("which are called tsebhi. They are made", xtext + 10, ytext + 50);
-            ctx.strokeText("from vegetablesand meat and is served", xtext + 10, ytext + 70);
-            ctx.strokeText("with a flatbread called injera.", xtext + 10, ytext + 90);
+            ctx.fillText("Eritrean food has many types of stews,",xtext + 10,ytext + 30);
+            ctx.fillText("which are called tsebhi. They are made", xtext + 10, ytext + 50);
+            ctx.fillText("from vegetablesand meat and is served", xtext + 10, ytext + 70);
+            ctx.fillText("with a flatbread called injera.", xtext + 10, ytext + 90);
         }
 
         }
